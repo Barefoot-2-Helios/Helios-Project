@@ -8,14 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var showDetail = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            
+            Image("background1")
+                .resizable()
+                .scaledToFill()
+            VStack {
+                Spacer()
+                Text("Welcome to")
+                    .fontWeight(.bold)
+                    .font(.system(size: 80))
+                    .foregroundStyle(.giallino)
+                Spacer()
+                Text("\nFURAHA!")
+                    .fontWeight(.bold)
+                    .font(.system(size: 90))
+                    .foregroundStyle(.giallino)
+                
+                Spacer()
+                    
+            }
+           
         }
-        .padding()
+        .onTapGesture {
+            showDetail = true
+        }
+        .fullScreenCover(isPresented: $showDetail) {
+            TopicView()
+        }
     }
 }
 
