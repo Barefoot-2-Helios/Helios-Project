@@ -37,7 +37,7 @@ struct Topic1View: View {
                             showDetail = true
                         }
                         .fullScreenCover(isPresented: $showDetail) {
-                            Liv1View()
+                            MiniGame1()
                         }
                         Spacer()
                     }

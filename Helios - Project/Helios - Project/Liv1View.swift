@@ -20,9 +20,6 @@ struct Liv1View: View {
         ZStack {
             Color.senape.ignoresSafeArea()
             VStack{
-                
-                BackButton(isForegroundWhite: true)
-
                
                 Spacer()
                 Text("Liv 1")
@@ -46,10 +43,6 @@ struct Liv1View: View {
         }
         .onTapGesture {
             stopAudioPlayback()
-            showDetail = true
-        }
-        .fullScreenCover(isPresented: $showDetail) {
-            MiniGame1()
         }
        
     }

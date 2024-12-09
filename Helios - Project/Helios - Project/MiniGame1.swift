@@ -10,6 +10,8 @@ import AVFAudio
 
 struct MiniGame1: View {
     
+    @State var showSplash = true
+    
  
     @Environment(PlayerModel.self) private var mediaPlayer
     @Environment(MillionaireGameViewModel.self) private var GameViewModel
@@ -39,8 +41,10 @@ struct MiniGame1: View {
                         .padding(50)
                         .font(.system(size: 100))
                         .onAppear(){
-                            GameViewModel.startGame()
-                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "m4a")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                GameViewModel.startGame()
+                                 mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "m4a")
+                            }
                             
                         }.onTapGesture {
                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "m4a")
@@ -82,7 +86,17 @@ struct MiniGame1: View {
                     Liv2View()
                 }
             }
-            
+            Liv1View()
+            .opacity(showSplash ? 1 : 0)
+            .onAppear {
+                mediaPlayer.playAudio(fileName: "resistor", fileExtension: "m4a")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    withAnimation() {
+                        self.showSplash = false
+                    }
+                }
+            }
+
         }
         
    }
