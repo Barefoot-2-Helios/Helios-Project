@@ -6,45 +6,94 @@
 //
 
 import SwiftUI
+import AVFAudio
 
 struct MiniGame1: View {
     
+ 
+    @Environment(PlayerModel.self) private var mediaPlayer
+    @Environment(MillionaireGameViewModel.self) private var GameViewModel
+    
     @Environment(\.dismiss) var dismiss // Access to dismiss the view
     @State private var showDetail = false
+    @State private var points = 0
+    @State private var selectedAnswer: String? = nil
+    @State private var fillPercentage: CGFloat = 1
+
     
     var body: some View {
-        ZStack{
+        ZStack {
             Color.senape.ignoresSafeArea()
-            VStack {
-                HStack {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        Spacer()
-                        HStack{
-                            Image(systemName: "arrowtriangle.backward")
-                                .font(.system(size: 70))
-                                .foregroundColor(.white)
-                            ZStack{
-                                Circle()
-                                    .frame(width: 100)
-                                    .foregroundStyle(.white)
-                                Image("house")
-                                    .resizable()
-                                    .frame(width: 75, height: 55)
+            VStack{
+                
+                BackButton(isForegroundWhite: true)
+                VStack{
+                    
+                    LinearProgress(progress: self.fillPercentage, foregroundColor: Color.green)
+                        .clipShape(Capsule())
+                        .frame(height: 50)
+                        .padding()
+                    
+                    
+                    Image(systemName: "speaker.wave.3")
+                        .padding(50)
+                        .font(.system(size: 100))
+                        .onAppear(){
+                            GameViewModel.startGame()
+                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "m4a")
+                            
+                        }.onTapGesture {
+                            mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "m4a")
+                        }
+                    
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                        ForEach(GameViewModel.showedAnswers, id: \.self) { answer in
+                            Button(action: {
+                                selectedAnswer = answer
+                                if selectedAnswer == GameViewModel.correctAnswer {
+                                    // Shuffle and reload new answers on correct selection
+                                    GameViewModel.startGame()
+                                    mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "m4a")
+                                    fillPercentage = fillPercentage + 25
+                                    if(fillPercentage >= 100){
+                                        GameViewModel.selectedAnswers = []
+                                        showDetail = true
+                                        fillPercentage = 0
+                                        
+                                    }
+                                    
+                                }
+                            }) {
+                                //TO CHANGE WITH RIGHT ASSET FOR IMAGES
+                                Text(answer)
+                                    .frame(maxWidth: .infinity, minHeight: 50)
+                                    .padding()
+                                    .background(selectedAnswer == answer ?
+                                                (answer == GameViewModel.correctAnswer ? Color.green : Color.red)
+                                                : Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
                             }
                         }
-                        .padding(.trailing, 40)
+                        
                     }
+                    
+                }.fullScreenCover(isPresented: $showDetail) {
+                    Liv2View()
+                    
                 }
-                Spacer()
-                Text("MINIGAME1")
-                Spacer()
             }
+            
         }
-    }
+        
+   }
+  
 }
+
+
 
 #Preview {
     MiniGame1()
+        .environment(PlayerModel())
+        .environment(MillionaireGameViewModel())
 }

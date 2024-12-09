@@ -5,16 +5,17 @@ import SwiftUI
 struct HeliosProjectApp: App {
     
     @State private var mediaPlayer = PlayerModel()
+    @State private var milionaireGameViwModel = MillionaireGameViewModel()
 
     //Setup an AVAudioSession when the app launches
     init() {
         mediaPlayer.configureAudioSession()
     }
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(mediaPlayer)
+                .environment(milionaireGameViwModel)
         }
     }
 }

@@ -16,27 +16,8 @@ struct Topic1View: View {
         ZStack {
             Color.senape.ignoresSafeArea()
             VStack{
-            HStack {
-                Button(action: {
-                    dismiss()
-                }) {
-                    Spacer()
-                    HStack{
-                        Image(systemName: "arrowtriangle.backward")
-                            .font(.system(size: 70))
-                            .foregroundColor(.white)
-                        ZStack{
-                            Circle()
-                                .frame(width: 100)
-                                .foregroundStyle(.white)
-                            Image("house")
-                                .resizable()
-                                .frame(width: 75, height: 55)
-                        }
-                    }
-                    .padding(.trailing, 40)
-                }
-            }
+                
+                BackButton(isForegroundWhite: true)
       
                 ScrollView(.vertical) {
                     
@@ -67,7 +48,7 @@ struct Topic1View: View {
                                 .foregroundStyle(.white)
                                 .frame(width: 220)
                             VStack{
-                                Text("Liv 1")
+                                Text("Liv 2")
                                 Image("liv2")
                             }
                         }                                .padding(.trailing, 100)

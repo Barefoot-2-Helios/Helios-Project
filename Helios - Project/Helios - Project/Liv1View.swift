@@ -17,22 +17,13 @@ struct Liv1View: View {
     @Environment(\.dismiss) var dismiss // Access to dismiss the view
     
     var body: some View {
-        ZStack{
+        ZStack {
             Color.senape.ignoresSafeArea()
             VStack{
-                HStack {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        Spacer()
-                        HStack{
-                            Image(systemName: "arrowtriangle.backward")
-                                .font(.system(size: 70))
-                                .foregroundColor(.white)
-                        }
-                        .padding(.trailing, 40)
-                    }
-                }
+                
+                BackButton(isForegroundWhite: true)
+
+               
                 Spacer()
                 Text("Liv 1")
                     .fontWeight(.semibold)
@@ -63,10 +54,10 @@ struct Liv1View: View {
        
     }
     private func startAudioPlayback() {
-        mediaPlayer.playAudio(fileName: "resistorAudio", fileExtension: "mp3")
+        mediaPlayer.playAudio(fileName: "resistor", fileExtension: "m4a")
         
         // Start a timer to play the audio every 5 seconds
-        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { _ in
+        Timer.scheduledTimer(withTimeInterval: 300.0, repeats: true) { _ in
             DispatchQueue.main.async {
                 mediaPlayer.audioPlayer?.play()
             }
@@ -84,4 +75,6 @@ struct Liv1View: View {
 
 #Preview {
     Liv1View()
+        .environment(PlayerModel())
+
 }

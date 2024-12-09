@@ -37,7 +37,7 @@ class PlayerModel {
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.play()
+           //audioPlayer?.play()
         } catch {
             print("Failed to play audio: \(error)")
         }

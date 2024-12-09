@@ -16,28 +16,9 @@ struct TopicView: View {
     var body: some View {
         ZStack{
             VStack{
-                HStack {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        Spacer()
-                        HStack{
-                            Image(systemName: "arrowtriangle.backward")
-                                .font(.system(size: 70))
-                                .foregroundColor(.giallino)
-                            ZStack{
-                                Circle()
-                                    .frame(width: 100)
-                                    .foregroundStyle(.giallino)
-                                Image("house")
-                                    .resizable()
-                                    .frame(width: 75, height: 55)
-                            }
-                        }
-                        .padding(.trailing, 40)
+                BackButton( isForegroundWhite: false)
 
-                    }
-                }
+                
                 ScrollView(.vertical) {
                     
                     HStack {
