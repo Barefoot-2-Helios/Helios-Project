@@ -2,43 +2,26 @@
 //  ContentView.swift
 //  Helios - Project
 //
-//  Created by Renato Ferrara on 26/09/24.
+//  Created by Beniamino Gentile on 09/12/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State private var showDetail = false
+    @State var showSplash = true
     
     var body: some View {
         ZStack {
-            
-            Image("background1")
-                .resizable()
-                .scaledToFill()
-            VStack {
-                Spacer()
-                Text("Welcome to")
-                    .fontWeight(.bold)
-                    .font(.system(size: 80))
-                    .foregroundStyle(.giallino)
-                Spacer()
-                Text("\nFURAHA!")
-                    .fontWeight(.bold)
-                    .font(.system(size: 90))
-                    .foregroundStyle(.giallino)
-                
-                Spacer()
-                    
-            }
-           
-        }
-        .onTapGesture {
-            showDetail = true
-        }
-        .fullScreenCover(isPresented: $showDetail) {
             TopicView()
+            SplashScreenView()
+                .opacity(showSplash ? 1 : 0)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        withAnimation() {
+                            self.showSplash = false
+                        }
+                    }
+                }
         }
     }
 }

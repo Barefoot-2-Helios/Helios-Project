@@ -11,13 +11,12 @@ struct TopicView: View {
     
     @Environment(\.dismiss) var dismiss // Access to dismiss the view
     @State private var showDetail = false
-
+    
     
     var body: some View {
         ZStack{
             VStack{
                 BackButton( isForegroundWhite: false)
-
                 
                 ScrollView(.vertical) {
                     
@@ -28,13 +27,13 @@ struct TopicView: View {
                                 .frame(width: 220)
                             Text("Topic 1")
                         }                                .padding(.leading, 100)
-
-                        .onTapGesture {
-                            showDetail = true
-                        }
-                        .fullScreenCover(isPresented: $showDetail) {
-                            Topic1View()
-                        }
+                        
+                            .onTapGesture {
+                                showDetail = true
+                            }
+                            .fullScreenCover(isPresented: $showDetail) {
+                                Topic1View()
+                            }
                         Spacer()
                     }
                     HStack {
@@ -45,7 +44,7 @@ struct TopicView: View {
                                 .frame(width: 220)
                             Text("Topic 2")
                         }                                .padding(.trailing, 100)
-
+                        
                     }
                     HStack {
                         Circle()
@@ -68,8 +67,8 @@ struct TopicView: View {
                             .padding(.leading, 100)
                         Spacer()
                     }
+                }
             }
-        }
         }
     }
 }

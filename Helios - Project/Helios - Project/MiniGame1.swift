@@ -25,10 +25,11 @@ struct MiniGame1: View {
         ZStack {
             Color.senape.ignoresSafeArea()
             VStack{
-                
+
                 BackButton(isForegroundWhite: true)
+                
                 VStack{
-                    
+                    Spacer()
                     LinearProgress(progress: self.fillPercentage, foregroundColor: Color.green)
                         .clipShape(Capsule())
                         .frame(height: 50)
@@ -60,7 +61,7 @@ struct MiniGame1: View {
                                         
                                         GameViewModel.startGame()
                                         mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
-                                    }
+                 }
                                 }
                             }) {
                                 //TO CHANGE WITH RIGHT ASSET FOR IMAGES

@@ -45,7 +45,10 @@ struct Liv2View: View {
                 }.navigationBarBackButtonHidden(true)
                 
                 Spacer()
-                
+                                
+                BackButton(isForegroundWhite: true)
+
+                Spacer()
                 Text("Liv 2")
                     .fontWeight(.semibold)
                     .font(.system(size: 90))
