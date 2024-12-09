@@ -25,10 +25,10 @@ struct MiniGame1: View {
         ZStack {
             Color.senape.ignoresSafeArea()
             VStack{
-                
                 BackButton(isForegroundWhite: true)
+                
                 VStack{
-                    
+                    Spacer()
                     LinearProgress(progress: self.fillPercentage, foregroundColor: Color.green)
                         .clipShape(Capsule())
                         .frame(height: 50)
@@ -61,7 +61,6 @@ struct MiniGame1: View {
                                         fillPercentage = 0
                                         
                                     }
-                                    
                                 }
                             }) {
                                 //TO CHANGE WITH RIGHT ASSET FOR IMAGES
@@ -77,10 +76,10 @@ struct MiniGame1: View {
                         }
                         
                     }
-                    
-                }.fullScreenCover(isPresented: $showDetail) {
+                    Spacer()
+                }
+                .fullScreenCover(isPresented: $showDetail) {
                     Liv2View()
-                    
                 }
             }
             
