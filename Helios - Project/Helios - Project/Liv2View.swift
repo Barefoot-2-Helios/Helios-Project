@@ -38,7 +38,7 @@ struct Liv2View: View {
                             showDetail = true
                         }
                         .fullScreenCover(isPresented: $showDetail) {
-                            ContentView()
+                            SplashScreenView()
                         }
                     }
                     .padding(.leading, 850)

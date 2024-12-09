@@ -5,7 +5,6 @@
 //  Created by Renato Ferrara on 08/12/24.
 //
 
-import Foundation
 import AVFoundation
 import Observation
 import SwiftUI
@@ -27,22 +26,23 @@ class MillionaireGameViewModel {
  
     
     func startGame() {
-           // Shuffle the list to ensure randomness
-           self.answersList = answersList.shuffled()
-
-           // Select the correct answer randomly
-           correctAnswer = answersList.randomElement()!
-            selectedAnswers.append(correctAnswer)
-
-           // Get the first 3 answers from the shuffled list excluding the correct answer
+        // Shuffle the list to ensure randomness
+        self.answersList = answersList.shuffled()
+        
+        // Select the correct answer randomly
+        correctAnswer = answersList.randomElement()!
+        selectedAnswers.append(correctAnswer)
+        
+        // Get the first 3 answers from the shuffled list excluding the correct answer
         var tempAnswers = answersList.filter { answer in
             !selectedAnswers.contains(answer) && answer != correctAnswer
         }.prefix(3)
-           // Add the correct answer to the temporary list
-           tempAnswers.append(correctAnswer)
-
-           // Shuffle `tempAnswers` to mix the correct answer with distractors
-           showedAnswers = tempAnswers.shuffled()
         
-       }
+        // Add the correct answer to the temporary list
+        tempAnswers.append(correctAnswer)
+        
+        // Shuffle `tempAnswers` to mix the correct answer with distractors
+        showedAnswers = tempAnswers.shuffled()
+        
+    }
 }
