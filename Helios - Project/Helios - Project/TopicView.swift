@@ -16,6 +16,8 @@ struct TopicView: View {
     var body: some View {
         ZStack{
             VStack{
+                Spacer()
+                BackButton( isForegroundWhite: false)
                 
                 ScrollView(.vertical) {
                     

@@ -47,7 +47,8 @@ struct Liv1View: View {
        
     }
     private func startAudioPlayback() {
-        mediaPlayer.playAudio(fileName: "resistor", fileExtension: "m4a")
+        mediaPlayer.playAudio(fileName: "Resistor", fileExtension: "mp3")
+
         
         // Start a timer to play the audio every 5 seconds
         Timer.scheduledTimer(withTimeInterval: 300.0, repeats: true) { _ in

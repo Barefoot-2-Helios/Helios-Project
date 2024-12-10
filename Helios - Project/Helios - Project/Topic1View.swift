@@ -16,7 +16,7 @@ struct Topic1View: View {
         ZStack {
             Color.senape.ignoresSafeArea()
             VStack{
-                
+                Spacer()
                 BackButton(isForegroundWhite: true)
       
                 ScrollView(.vertical) {

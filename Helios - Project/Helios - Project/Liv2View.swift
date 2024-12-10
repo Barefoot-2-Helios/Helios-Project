@@ -20,7 +20,7 @@ struct Liv2View: View {
         ZStack{
             Color.senape.ignoresSafeArea()
             VStack{
-                
+                                             
                 BackButton(isForegroundWhite: true)
 
                 Spacer()
@@ -30,10 +30,8 @@ struct Liv2View: View {
                     .foregroundStyle(.white)
                 
                 Image("Connector")
-                    .resizable()
                     .frame(width: 200, height: 200)
-
-                Text("Connector")
+                Text("Work In Progress")
                     .fontWeight(.semibold)
                     .font(.system(size: 90))
                     .foregroundStyle(.white)

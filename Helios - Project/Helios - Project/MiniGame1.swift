@@ -27,63 +27,76 @@ struct MiniGame1: View {
         ZStack {
             Color.senape.ignoresSafeArea()
             VStack{
+
                 BackButton(isForegroundWhite: true)
+                    .offset(x:10, y:-210)
                 
                 VStack{
-                    Spacer()
-                    LinearProgress(progress: self.fillPercentage, foregroundColor: Color.green)
-                        .clipShape(Capsule())
-                        .frame(height: 50)
-                        .padding()
-                    
                     
                     Image(systemName: "speaker.wave.3")
-                        .padding(50)
+                        .offset(x:10, y:-150)
                         .font(.system(size: 100))
                         .onAppear(){
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                                GameViewModel.startGame()
-                                 mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "m4a")
+                            GameViewModel.startGame()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+                                mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
                             }
                             
-                        }.onTapGesture {
-                            mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "m4a")
                         }
+                        .onTapGesture {
+                            mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
+                        }
+                    
+                    LinearProgress(progress: self.fillPercentage, foregroundColor: Color.green)
+                        .clipShape(Capsule())
+                        .frame(height: 100)
+                        .padding()
+                        .offset(x:10, y:-130)
+
+                    
+                    
+                
                     
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
                         ForEach(GameViewModel.showedAnswers, id: \.self) { answer in
                             Button(action: {
                                 selectedAnswer = answer
                                 if selectedAnswer == GameViewModel.correctAnswer {
-                                    // Shuffle and reload new answers on correct selection
-                                    GameViewModel.startGame()
-                                    mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "m4a")
                                     fillPercentage = fillPercentage + 25
                                     if(fillPercentage >= 100){
-                                        GameViewModel.selectedAnswers = []
-                                        showDetail = true
-                                        fillPercentage = 0
-                                        
-                                    }
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                            GameViewModel.selectedAnswers = []
+                                            showDetail = true
+                                            fillPercentage = 0
+                                        }
+                                    } else {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                            
+                                            
+                                            GameViewModel.startGame()
+                                            mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
+                                            selectedAnswer = ""
+                                        }
+                 }
                                 }
                             }) {
                                 //TO CHANGE WITH RIGHT ASSET FOR IMAGES
-                                Text(answer)
-                                    .frame(maxWidth: .infinity, minHeight: 50)
-                                    .padding()
+                                Image("DiodeReal")
+                                    .padding(15)
                                     .background(selectedAnswer == answer ?
                                                 (answer == GameViewModel.correctAnswer ? Color.green : Color.red)
-                                                : Color.blue)
+                                                : Color.white)
                                     .foregroundColor(.white)
-                                    .cornerRadius(10)
-                            }
+                             }
                         }
                         
                     }
-                    Spacer()
-                }
-                .fullScreenCover(isPresented: $showDetail) {
+                    .offset(x:10, y:130)
+
+                    
+                }.fullScreenCover(isPresented: $showDetail) {
                     Liv2View()
+                    
                 }
             }
             Liv1View()

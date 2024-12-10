@@ -26,7 +26,6 @@ class PlayerModel {
             // Handle error.
             print("Failed to configure audio session: \(error)")
         }
-        
     }
     
     func playAudio(fileName: String, fileExtension: String) {
