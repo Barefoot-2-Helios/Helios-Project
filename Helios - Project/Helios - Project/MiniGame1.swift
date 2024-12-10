@@ -38,9 +38,12 @@ struct MiniGame1: View {
                         .font(.system(size: 100))
                         .onAppear(){
                             GameViewModel.startGame()
-                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+                                mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
+                            }
                             
-                        }.onTapGesture {
+                        }
+                        .onTapGesture {
                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
                         }
                     
@@ -61,7 +64,7 @@ struct MiniGame1: View {
                                 if selectedAnswer == GameViewModel.correctAnswer {
                                     fillPercentage = fillPercentage + 25
                                     if(fillPercentage >= 100){
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                             GameViewModel.selectedAnswers = []
                                             showDetail = true
                                             fillPercentage = 0
