@@ -20,32 +20,7 @@ struct Liv2View: View {
         ZStack{
             Color.senape.ignoresSafeArea()
             VStack{
-                VStack{
-                    HStack {
-                        Image(systemName: "arrowtriangle.backward")
-                            .font(.system(size: 70))
-                            .foregroundColor(isForegroundWhite ? .white : Color("giallino"))
-                        
-                        ZStack {
-                            Circle()
-                                .frame(width: 100)
-                                .foregroundStyle(.white)
-                            
-                            Image("house")
-                                .resizable()
-                                .frame(width: 75, height: 55)
-                        } .onTapGesture {
-                            showDetail = true
-                        }
-                        .fullScreenCover(isPresented: $showDetail) {
-                            ContentView()
-                        }
-                    }
-                    .padding(.leading, 850)
-                }.navigationBarBackButtonHidden(true)
-                
-                Spacer()
-                                
+                                             
                 BackButton(isForegroundWhite: true)
 
                 Spacer()

@@ -27,17 +27,12 @@ struct MiniGame1: View {
             VStack{
 
                 BackButton(isForegroundWhite: true)
+                    .offset(x:10, y:-210)
                 
                 VStack{
-                    Spacer()
-                    LinearProgress(progress: self.fillPercentage, foregroundColor: Color.green)
-                        .clipShape(Capsule())
-                        .frame(height: 50)
-                        .padding()
-                    
                     
                     Image(systemName: "speaker.wave.3")
-                        .padding(50)
+                        .offset(x:10, y:-150)
                         .font(.system(size: 100))
                         .onAppear(){
                             GameViewModel.startGame()
@@ -47,6 +42,16 @@ struct MiniGame1: View {
                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
                         }
                     
+                    LinearProgress(progress: self.fillPercentage, foregroundColor: Color.green)
+                        .clipShape(Capsule())
+                        .frame(height: 100)
+                        .padding()
+                        .offset(x:10, y:-130)
+
+                    
+                    
+                
+                    
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
                         ForEach(GameViewModel.showedAnswers, id: \.self) { answer in
                             Button(action: {
@@ -54,29 +59,35 @@ struct MiniGame1: View {
                                 if selectedAnswer == GameViewModel.correctAnswer {
                                     fillPercentage = fillPercentage + 25
                                     if(fillPercentage >= 100){
-                                        GameViewModel.selectedAnswers = []
-                                        showDetail = true
-                                        fillPercentage = 0
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                            GameViewModel.selectedAnswers = []
+                                            showDetail = true
+                                            fillPercentage = 0
+                                        }
                                     } else {
-                                        
-                                        GameViewModel.startGame()
-                                        mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                            
+                                            
+                                            GameViewModel.startGame()
+                                            mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
+                                            selectedAnswer = ""
+                                        }
                  }
                                 }
                             }) {
                                 //TO CHANGE WITH RIGHT ASSET FOR IMAGES
-                                Text(answer)
-                                    .frame(maxWidth: .infinity, minHeight: 50)
-                                    .padding()
+                                Image("DiodeReal")
+                                    .padding(15)
                                     .background(selectedAnswer == answer ?
                                                 (answer == GameViewModel.correctAnswer ? Color.green : Color.red)
-                                                : Color.blue)
+                                                : Color.white)
                                     .foregroundColor(.white)
-                                    .cornerRadius(10)
-                            }
+                             }
                         }
                         
                     }
+                    .offset(x:10, y:130)
+
                     
                 }.fullScreenCover(isPresented: $showDetail) {
                     Liv2View()
