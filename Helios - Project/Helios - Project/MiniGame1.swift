@@ -10,6 +10,8 @@ import AVFAudio
 
 struct MiniGame1: View {
     
+    @State var showSplash = true
+    
  
     @Environment(PlayerModel.self) private var mediaPlayer
     @Environment(MillionaireGameViewModel.self) private var GameViewModel
@@ -94,7 +96,17 @@ struct MiniGame1: View {
                     
                 }
             }
-            
+            Liv1View()
+            .opacity(showSplash ? 1 : 0)
+            .onAppear {
+                mediaPlayer.playAudio(fileName: "resistor", fileExtension: "m4a")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    withAnimation() {
+                        self.showSplash = false
+                    }
+                }
+            }
+
         }
         
    }
