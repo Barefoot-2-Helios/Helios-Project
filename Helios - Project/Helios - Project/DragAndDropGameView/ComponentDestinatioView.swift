@@ -8,16 +8,26 @@
 import SwiftUI
 
 struct ComponentDestinatioView: View {
-    @Binding var componentDestination: String
+
+    var viewModel = DragAndDropComponentViewModel()
+    
+    @Binding var componentDestination: ComponentModel
+    @State var startingComponent: ComponentModel?
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 15)
                 .foregroundStyle(.giallino)
-            Image(componentDestination)
+            Image(componentDestination.componentDestinationImage)
+        }
+        .dropDestination(for: ComponentModel.self) { droppedComponent, index in
+            viewModel.handleDroppedComponents(droppedComponents: droppedComponent, index: index, currentDestination: componentDestination.componentName)
+            return true
         }
     }
 }
 
 #Preview {
-    ComponentDestinatioView(componentDestination: .constant("DiodeDestination"))
+    let viewModel = DragAndDropComponentViewModel()
+    ComponentDestinatioView(componentDestination: .constant(viewModel.componentsList[0]))
 }

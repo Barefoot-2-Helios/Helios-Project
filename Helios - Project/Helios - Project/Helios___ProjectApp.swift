@@ -13,9 +13,9 @@ struct HeliosProjectApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(mediaPlayer)
-                .environment(milionaireGameViwModel)
+            DragAndDropGameView()
+            //.environment(mediaPlayer)
+                //.environment(milionaireGameViwModel)
         }
     }
 }

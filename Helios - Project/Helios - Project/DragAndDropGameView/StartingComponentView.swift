@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct StartingComponentView: View {
-    @Binding var startingComponent: String
+    @Binding var startingComponent: ComponentModel
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 15)
                 .foregroundStyle(.rossino)
-            Image(startingComponent)
+            Image(startingComponent.componentImage)
+                .draggable(startingComponent)
         }
     }
 }
 
 #Preview {
-    StartingComponentView(startingComponent: .constant("DiodeReal"))
+    let viewModel = DragAndDropComponentViewModel()
+    StartingComponentView(startingComponent: .constant(viewModel.componentsList[0]))
 }

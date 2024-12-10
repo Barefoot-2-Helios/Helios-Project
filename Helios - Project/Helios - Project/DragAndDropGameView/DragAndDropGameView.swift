@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct DragAndDropGameView: View {
+    var componentViewModel = DragAndDropComponentViewModel()
+    
     var body: some View {
         VStack {
-            StartingComponentView(startingComponent: .constant("DiodeReal"))
+            StartingComponentView(startingComponent: .constant(componentViewModel.componentsList[0]))
             HStack {
-                ComponentDestinatioView(componentDestination: .constant("DiodeDestination"))
-                ComponentDestinatioView(componentDestination: .constant("ResistorDestination"))
+                ComponentDestinatioView(componentDestination: .constant(componentViewModel.componentsList[0]))
+                ComponentDestinatioView(componentDestination: .constant(componentViewModel.componentsList[1]))
             }
         }
     }
