@@ -19,19 +19,13 @@ struct BackButton: View {
             }) {
                 Spacer()
                 HStack {
-                    Image(systemName: "arrowtriangle.backward")
+                    Image("backButton")
                         .font(.system(size: 70))
-                        .foregroundColor(isForegroundWhite ? .white : Color("giallino"))
-                    ZStack {
-                        Circle()
-                            .frame(width: 100)
-                            .foregroundStyle(isForegroundWhite ? .white : Color("giallino"))
-                        Image("house")
-                            .resizable()
-                            .frame(width: 75, height: 55)
-                    }
+                        .foregroundColor(isForegroundWhite ? .white : .black)
+                    
                 }
-                .padding(.trailing, 40)
+                .padding(.trailing, 700)
+                
             }
         }
     }

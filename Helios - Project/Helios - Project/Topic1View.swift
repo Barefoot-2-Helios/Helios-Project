@@ -16,8 +16,9 @@ struct Topic1View: View {
         ZStack {
             Color.senape.ignoresSafeArea()
             VStack{
-                Spacer()
                 BackButton(isForegroundWhite: true)
+                    .offset(x:-40, y:-10)
+
       
                 ScrollView(.vertical) {
                     
@@ -37,7 +38,7 @@ struct Topic1View: View {
                             showDetail = true
                         }
                         .fullScreenCover(isPresented: $showDetail) {
-                            MiniGame1()
+                            Liv1View()
                         }
                         Spacer()
                     }
@@ -74,7 +75,6 @@ struct Topic1View: View {
                             .foregroundStyle(.white)
                             .frame(width: 220)
                             .padding(.leading, 100)
-                        Spacer()
                     }
             }
                     

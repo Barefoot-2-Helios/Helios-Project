@@ -24,7 +24,7 @@ struct Liv2View: View {
                 BackButton(isForegroundWhite: true)
 
                 Spacer()
-                Text("Liv 2")
+                Text("Liv 3")
                     .fontWeight(.semibold)
                     .font(.system(size: 90))
                     .foregroundStyle(.white)

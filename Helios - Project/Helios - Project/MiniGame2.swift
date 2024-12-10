@@ -29,9 +29,9 @@ struct MiniGame2: View {
         ZStack {
             Color.senape.ignoresSafeArea()
             VStack{
-                
                 BackButton(isForegroundWhite: true)
-                    .offset(x:10, y:-180)
+                    .offset(x:-40, y:-240)
+
                 
                 VStack{
                     
@@ -54,19 +54,12 @@ struct MiniGame2: View {
                         .onTapGesture {
                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
                         }
-                    
-                    /*
-                    LinearProgress(progress: self.fillPercentage, foregroundColor: Color.green)
-                        .clipShape(Capsule())
-                        .frame(height: 100)
-                        .padding()
-                        .offset(x:10, y:-130)
-                    */
+        
                     
                     
                     
                     
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
                         ForEach(answerList, id: \.self) { answer in
                             Button(action: {
                                 selectedAnswer = answer
@@ -83,7 +76,7 @@ struct MiniGame2: View {
                                             
                                             
                                             GameViewModel.startGame()
-                                            mediaPlayer.playAudio(fileName: "Diode" , fileExtension: "mp3")
+                                            mediaPlayer.playAudio(fileName: "Diode3D" , fileExtension: "mp3")
                                             selectedAnswer = ""
                                         }
                                     }

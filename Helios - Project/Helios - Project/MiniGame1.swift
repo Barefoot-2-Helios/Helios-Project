@@ -29,17 +29,24 @@ struct MiniGame1: View {
             VStack{
                 
                 BackButton(isForegroundWhite: true)
-                    .offset(x:10, y:-210)
+                    .offset(x:-30, y:-100)
                 
                 VStack{
-                    
-                    Image(systemName: "speaker.wave.3")
-                        .offset(x:10, y:-100)
-                        .font(.system(size: 100))
+                    Group{
+                        Text("DIODE")
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .font(.system(size: 70))
+ 
+                        
+                        Image(systemName: "speaker.wave.3")
+                            .font(.system(size: 100))
+                            .foregroundStyle(.white)
+                    }
                         .onAppear(){
                             GameViewModel.startGame()
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-                                mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                mediaPlayer.playAudio(fileName: "Diode3D", fileExtension: "mp3")
                             }
                             
                         }
@@ -47,21 +54,21 @@ struct MiniGame1: View {
                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
                         }
                     /*
-                    LinearProgress(progress: self.fillPercentage, foregroundColor: Color.green)
-                        .clipShape(Capsule())
-                        .frame(height: 100)
-                        .padding()
-                        .offset(x:10, y:-130)
-                    */
+                     LinearProgress(progress: self.fillPercentage, foregroundColor: Color.green)
+                     .clipShape(Capsule())
+                     .frame(height: 100)
+                     .padding()
+                     .offset(x:10, y:-130)
+                     */
                     
                     
                     
                     
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 30) {
                         ForEach(GameViewModel.showedAnswers, id: \.self) { answer in
                             Button(action: {
                                 selectedAnswer = answer
-                                if selectedAnswer == GameViewModel.correctAnswer {
+                                if selectedAnswer == "Diode3D" {
                                     fillPercentage = fillPercentage + 25
                                     if(fillPercentage >= 100){
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -74,42 +81,39 @@ struct MiniGame1: View {
                                             
                                             
                                             GameViewModel.startGame()
-                                            mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
+                                            mediaPlayer.playAudio(fileName: "Diode3D" , fileExtension: "mp3")
                                             selectedAnswer = ""
                                         }
                                     }
                                 }
                             }) {
-                                //TO CHANGE WITH RIGHT ASSET FOR IMAGES
-                                Image("DiodeReal")
-                                    .padding(15)
-                                    .background(selectedAnswer == answer ?
-                                                (answer == GameViewModel.correctAnswer ? Color.green : Color.red)
-                                                : Color.white)
-                                    .foregroundColor(.white)
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 30)
+                                        .frame(width: 350, height: 225)
+                                        .overlay( // Bordo opzionale per aggiungere un effetto più evidente
+                                            RoundedRectangle(cornerRadius: 30)
+                                                .fill(selectedAnswer == answer
+                                                        ? (answer == "Diode3D" ? Color.green : Color.red)
+                                                        : Color.white) // Solo il selezionato cambia colore
+                                       )
+                                    
+                                    Image(answer)
+                                }.padding(.bottom, 20)
                             }
                         }
                         
                     }
-                    .offset(x:10, y:130)
-                    
+                    .offset(x:10, y:100)
+
                     
                 }.fullScreenCover(isPresented: $showDetail) {
                     MiniGame2()
- 
+                    
                 }
             }
-            /* Liv1View()
-             .opacity(showSplash ? 1 : 0)
-             .onAppear {
-             mediaPlayer.playAudio(fileName: "resistor", fileExtension: "m4a")
-             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-             withAnimation() {
-             self.showSplash = false
-             }
-             }*/
+         
         }
-   }
+    }
 }
 
 
