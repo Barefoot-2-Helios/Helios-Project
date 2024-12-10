@@ -1,4 +1,4 @@
-//
+
 //  MiniGame1.swift
 //  Helios - Project
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFAudio
 
-struct MiniGame1: View {
+struct MiniGame2: View {
     
     @State var showSplash = true
     
@@ -21,6 +21,8 @@ struct MiniGame1: View {
     @State private var points = 0
     @State private var selectedAnswer: String? = nil
     @State private var fillPercentage: CGFloat = 78
+    
+    @State private var answerList = ["DIODE", "CONNECTOR", "RESISTOR", "CAPACITOR" ]
 
     
     var body: some View {
@@ -29,23 +31,30 @@ struct MiniGame1: View {
             VStack{
                 
                 BackButton(isForegroundWhite: true)
-                    .offset(x:10, y:-210)
+                    .offset(x:10, y:-180)
                 
                 VStack{
                     
+                    Image("DiodeReal")
+                        .font(.system(size: 100))
+                        .offset(x:10, y:-150)
+
+
+                    
                     Image(systemName: "speaker.wave.3")
-                        .offset(x:10, y:-100)
+                        .offset(x:10, y:-150)
                         .font(.system(size: 100))
                         .onAppear(){
                             GameViewModel.startGame()
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-                                mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                mediaPlayer.playAudio(fileName: "Diode", fileExtension: "mp3")
                             }
                             
                         }
                         .onTapGesture {
                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
                         }
+                    
                     /*
                     LinearProgress(progress: self.fillPercentage, foregroundColor: Color.green)
                         .clipShape(Capsule())
@@ -58,10 +67,10 @@ struct MiniGame1: View {
                     
                     
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                        ForEach(GameViewModel.showedAnswers, id: \.self) { answer in
+                        ForEach(answerList, id: \.self) { answer in
                             Button(action: {
                                 selectedAnswer = answer
-                                if selectedAnswer == GameViewModel.correctAnswer {
+                                if selectedAnswer == "DIODE"  {
                                     fillPercentage = fillPercentage + 25
                                     if(fillPercentage >= 100){
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -74,19 +83,21 @@ struct MiniGame1: View {
                                             
                                             
                                             GameViewModel.startGame()
-                                            mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
+                                            mediaPlayer.playAudio(fileName: "Diode" , fileExtension: "mp3")
                                             selectedAnswer = ""
                                         }
                                     }
                                 }
                             }) {
                                 //TO CHANGE WITH RIGHT ASSET FOR IMAGES
-                                Image("DiodeReal")
-                                    .padding(15)
+                                Text(answer)
+                                    .font(.system(size: 40))
+                                    .frame(width: 300.0, height: 100.0)
+                                    .padding(10)
                                     .background(selectedAnswer == answer ?
-                                                (answer == GameViewModel.correctAnswer ? Color.green : Color.red)
+                                                (answer == "DIODE" ? Color.green : Color.red)
                                                 : Color.white)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.black)
                             }
                         }
                         
@@ -95,27 +106,23 @@ struct MiniGame1: View {
                     
                     
                 }.fullScreenCover(isPresented: $showDetail) {
-                    MiniGame2()
- 
+                    Liv2View()
+                        .transition(.slide)
+                    
                 }
             }
-            /* Liv1View()
-             .opacity(showSplash ? 1 : 0)
-             .onAppear {
-             mediaPlayer.playAudio(fileName: "resistor", fileExtension: "m4a")
-             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-             withAnimation() {
-             self.showSplash = false
-             }
-             }*/
+            
         }
+        
    }
+  
 }
 
 
 
 #Preview {
-    MiniGame1()
+    MiniGame2()
         .environment(PlayerModel())
         .environment(MillionaireGameViewModel())
 }
+
