@@ -30,23 +30,23 @@ struct MiniGame2: View {
             Color.senape.ignoresSafeArea()
             VStack{
                 BackButton(isForegroundWhite: true)
-                    .offset(x:-40, y:-240)
+                    .offset(x:-40, y:-100)
 
                 
                 VStack{
                     
                     Image("DiodeReal")
                         .font(.system(size: 100))
-                        .offset(x:10, y:-150)
+                        .offset(x:10, y:-70)
 
 
                     
                     Image(systemName: "speaker.wave.3")
-                        .offset(x:10, y:-150)
+                        .foregroundStyle(.white)
                         .font(.system(size: 100))
                         .onAppear(){
                             GameViewModel.startGame()
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 mediaPlayer.playAudio(fileName: "Diode", fileExtension: "mp3")
                             }
                             
@@ -59,7 +59,7 @@ struct MiniGame2: View {
                     
                     
                     
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 50) {
                         ForEach(answerList, id: \.self) { answer in
                             Button(action: {
                                 selectedAnswer = answer
@@ -82,20 +82,27 @@ struct MiniGame2: View {
                                     }
                                 }
                             }) {
-                                //TO CHANGE WITH RIGHT ASSET FOR IMAGES
-                                Text(answer)
-                                    .font(.system(size: 40))
-                                    .frame(width: 300.0, height: 100.0)
-                                    .padding(10)
-                                    .background(selectedAnswer == answer ?
-                                                (answer == "DIODE" ? Color.green : Color.red)
-                                                : Color.white)
-                                    .foregroundColor(.black)
+                                //TO CHANGE WITH RIGHT ASSET FOR
+                                ZStack{
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .frame(width: 350, height: 225)
+                                            .overlay( // Bordo opzionale per aggiungere un effetto più evidente
+                                                RoundedRectangle(cornerRadius: 30)
+                                                    .fill(selectedAnswer == answer
+                                                          ? (answer == "DIODE" ? Color.green : Color.red)
+                                                          : Color.white) // Solo il selezionato cambia colore
+                                            )
+                                    }
+                                     Text(answer)
+                                        .font(.system(size: 40))
+                                        .foregroundStyle(.black)
+                                }
                             }
                         }
                         
                     }
-                    .offset(x:10, y:130)
+                    .offset(x:10, y:90)
                     
                     
                 }.fullScreenCover(isPresented: $showDetail) {
