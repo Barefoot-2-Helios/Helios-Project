@@ -28,8 +28,6 @@ struct MiniGame1: View {
             Color.senape.ignoresSafeArea()
             VStack{
                 
-                BackButton(isForegroundWhite: true)
-                    .offset(x:-30, y:-100)
                 
                 VStack{
                     Group{
@@ -53,14 +51,6 @@ struct MiniGame1: View {
                         .onTapGesture {
                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
                         }
-                    /*
-                     LinearProgress(progress: self.fillPercentage, foregroundColor: Color.green)
-                     .clipShape(Capsule())
-                     .frame(height: 100)
-                     .padding()
-                     .offset(x:10, y:-130)
-                     */
-                    
                     
                     
                     
@@ -90,11 +80,11 @@ struct MiniGame1: View {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 30)
                                         .frame(width: 350, height: 225)
-                                        .overlay( // Bordo opzionale per aggiungere un effetto più evidente
+                                        .overlay( 
                                             RoundedRectangle(cornerRadius: 30)
                                                 .fill(selectedAnswer == answer
                                                         ? (answer == "Diode3D" ? Color.green : Color.red)
-                                                        : Color.white) // Solo il selezionato cambia colore
+                                                        : Color.white)
                                        )
                                     
                                     Image(answer)
@@ -111,6 +101,8 @@ struct MiniGame1: View {
                     
                 }
             }
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading: BackButton( isForegroundWhite: true))
          
         }
     }

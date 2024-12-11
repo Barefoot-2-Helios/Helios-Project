@@ -17,15 +17,12 @@ struct BackButton: View {
             Button(action: {
                 dismiss()
             }) {
-                Spacer()
                 HStack {
-                    Image("backButton")
-                        .font(.system(size: 70))
+                    Image("backButton2")
                         .foregroundColor(isForegroundWhite ? .white : .black)
                     
                 }
-                .padding(.trailing, 700)
-                
+ 
             }
         }
     }

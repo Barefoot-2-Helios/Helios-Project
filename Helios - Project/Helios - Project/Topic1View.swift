@@ -13,75 +13,73 @@ struct Topic1View: View {
     @State private var showDetail = false
     
     var body: some View {
-        ZStack {
-            Color.senape.ignoresSafeArea()
             VStack{
-                BackButton(isForegroundWhite: true)
-                    .offset(x:-40, y:-10)
-
-      
-                ScrollView(.vertical) {
-                    
-                    HStack {
-                        ZStack {
-                            Circle()
-                                .foregroundStyle(.white)
-                                .frame(width: 220)
+                ZStack {
+                    Color.senape.ignoresSafeArea()
+                    VStack{
+                        ScrollView(.vertical) {
+                            HStack {
+                                    ZStack {
+                                        
+                                        Circle()
+                                            .foregroundStyle(.white)
+                                            .frame(width: 220)
+                                            
+                                            VStack{
+                                                
+                                                Text("Liv 1")
+                                                Image("liv1")
+                                            }
+                                    }.padding(.leading, 100)
+                                    
+                                        .onTapGesture {
+                                            showDetail = true
+                                        }
+                                        .navigationDestination(isPresented: $showDetail) { Liv1View()}
+                                    Spacer()
+                                }
+                            }
+                            HStack {
+                                Spacer()
+                                ZStack{
+                                    Circle()
+                                        .foregroundStyle(.white)
+                                        .frame(width: 220)
+                                    VStack{
+                                        Text("Liv 2")
+                                        Image("liv2")
+                                    }
+                                }                                .padding(.trailing, 100)
                                 
-                            VStack{
-                                Text("Liv 1")
-                                Image("liv1")
                             }
-                        }.padding(.leading, 100)
+                            HStack {
+                                Circle()
+                                    .foregroundStyle(.white)
+                                    .frame(width: 220)
+                                    .padding(.leading, 100)
+                                Spacer()
+                            }
+                            HStack {
+                                Spacer()
+                                Circle()
+                                    .foregroundStyle(.white
+                                    )
+                                    .frame(width: 220)
+                                    .padding(.trailing, 100)
+                            }
+                            HStack {
+                                Circle()
+                                    .foregroundStyle(.white)
+                                    .frame(width: 220)
+                                    .padding(.leading, 100)
+                            }
+                        }
                         
-                        .onTapGesture {
-                            showDetail = true
-                        }
-                        .fullScreenCover(isPresented: $showDetail) {
-                            Liv1View()
-                        }
-                        Spacer()
                     }
-                    HStack {
-                        Spacer()
-                        ZStack{
-                            Circle()
-                                .foregroundStyle(.white)
-                                .frame(width: 220)
-                            VStack{
-                                Text("Liv 2")
-                                Image("liv2")
-                            }
-                        }                                .padding(.trailing, 100)
-
-                    }
-                    HStack {
-                        Circle()
-                            .foregroundStyle(.white)
-                            .frame(width: 220)
-                            .padding(.leading, 100)
-                        Spacer()
-                    }
-                    HStack {
-                        Spacer()
-                        Circle()
-                            .foregroundStyle(.white
-                            )
-                            .frame(width: 220)
-                            .padding(.trailing, 100)
-                    }
-                    HStack {
-                        Circle()
-                            .foregroundStyle(.white)
-                            .frame(width: 220)
-                            .padding(.leading, 100)
-                    }
-            }
-                    
-                }
-            }
-        }
+                } .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: BackButton( isForegroundWhite: true))
     }
+}
 
 
 #Preview {

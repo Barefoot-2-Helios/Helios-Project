@@ -10,15 +10,15 @@ import AVFoundation
 
 struct Liv1View: View {
     @State private var showDetail = false
-
-        var body: some View {
-            VStack(spacing: 20) {
+    
+    var body: some View {
+            VStack() {
                 // Titolo del livello
                 Text("LEVEL 1")
-                     .fontWeight(.bold)
+                    .fontWeight(.bold)
                     .foregroundColor(.black)
                     .font(.system(size: 90))
-
+                
                 
                 // Immagine del diodo
                 Image("Diode3D") // Assicurati che l'immagine si chiami "diodeImage" e sia nel tuo asset catalog
@@ -26,29 +26,32 @@ struct Liv1View: View {
                     .scaledToFit()
                     .frame(width:4500, height: 400)
                     .padding(90)// Dimensioni dell'immagine
-
+                
                 
                 // Etichetta "DIODE"
                 Text("DIODE")
-                     .fontWeight(.bold)
-                     .foregroundColor(.senape)
+                    .fontWeight(.bold)
+                    .foregroundColor(.senape)
                     .font(.system(size: 70))
-
-            }.onAppear(){
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.showDetail.toggle()
-                }
                 
             }
-            .fullScreenCover(isPresented: $showDetail) {
-                MiniGame1()
-            }
-            .padding()
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading: BackButton( isForegroundWhite: true))// Attach custom button
+                .navigationDestination(isPresented: $showDetail) { MiniGame1()}
+                .onAppear(){
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.showDetail.toggle()
+                    }
+                    /* .fullScreenCover(isPresented: $showDetail) {
+                     MiniGame1()
+                     }*/
+                }
+            
         }
-    }
-
-
-
+        
+    
+    
+}
 #Preview {
     Liv1View()
   
