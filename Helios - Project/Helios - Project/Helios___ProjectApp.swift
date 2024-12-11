@@ -13,7 +13,7 @@ struct HeliosProjectApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CardCarouselView()
                 .environment(mediaPlayer)
                 .environment(milionaireGameViwModel)
         }

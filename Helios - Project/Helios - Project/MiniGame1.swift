@@ -9,8 +9,7 @@ import SwiftUI
 import AVFAudio
 
 struct MiniGame1: View {
-    
- 
+  
     @Environment(PlayerModel.self) private var mediaPlayer
     @Environment(MillionaireGameViewModel.self) private var GameViewModel
     
@@ -19,7 +18,9 @@ struct MiniGame1: View {
     @State private var points = 0
     @State private var selectedAnswer: String? = nil
     @State private var fillPercentage: CGFloat = 1
-
+    
+    
+    
     
     var body: some View {
         ZStack {
@@ -40,7 +41,7 @@ struct MiniGame1: View {
                         .font(.system(size: 100))
                         .onAppear(){
                             GameViewModel.startGame()
-                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "m4a")
+                            mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "m4a")
                             
                         }.onTapGesture {
                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "m4a")
@@ -78,21 +79,19 @@ struct MiniGame1: View {
                     }
                     Spacer()
                 }
-                .fullScreenCover(isPresented: $showDetail) {
-                    Liv2View()
-                }
+               
             }
             
         }
         
-   }
-  
+    }
+    
 }
 
 
 
-#Preview {
-    MiniGame1()
-        .environment(PlayerModel())
-        .environment(MillionaireGameViewModel())
-}
+//#Preview {
+//    MiniGame1(namespace: ., card: <#Card#>)
+//        .environment(PlayerModel())
+//        .environment(MillionaireGameViewModel())
+//}

@@ -38,7 +38,7 @@ struct ContentView: View {
             showDetail = true
         }
         .fullScreenCover(isPresented: $showDetail) {
-            TopicView()
+//            CardCarouselView(card: <#Card#>)
         }
     }
 }

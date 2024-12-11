@@ -11,16 +11,20 @@ struct Topic1View: View {
     
     @Environment(\.dismiss) var dismiss // Access to dismiss the view
     @State private var showDetail = false
+    @State private var isShowing = false
+
+    var card: Card
+    
     
     var body: some View {
         ZStack {
-            Color.senape.ignoresSafeArea()
+            card.cardBackground
+                .edgesIgnoringSafeArea(.all)
+            
             VStack{
-                
                 BackButton(isForegroundWhite: true)
       
                 ScrollView(.vertical) {
-                    
                     HStack {
                         ZStack {
                             Circle()
@@ -31,13 +35,14 @@ struct Topic1View: View {
                                 Text("Liv 1")
                                 Image("liv1")
                             }
-                        }.padding(.leading, 100)
+                        }
+                        .padding(.leading, 100)
                         
                         .onTapGesture {
                             showDetail = true
                         }
                         .fullScreenCover(isPresented: $showDetail) {
-                            Liv1View()
+                            MiniGame1()
                         }
                         Spacer()
                     }
@@ -79,11 +84,19 @@ struct Topic1View: View {
             }
                     
                 }
+            .transition(.scale.animation(.easeInOut))
+
             }
+        .onAppear { isShowing = true }
+               .onDisappear { isShowing = false }
         }
     }
 
 
 #Preview {
-    Topic1View()
+    Topic1View(card: Card(
+        cardLabel: "ciao",
+        cardImage: ["house"],
+        cardBackground: .senape
+    ))
 }

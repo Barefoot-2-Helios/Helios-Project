@@ -10,37 +10,37 @@
 		5284C51D2D06066900E91C06 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284C51C2D06066500E91C06 /* BackButton.swift */; };
 		5284C5222D060FAB00E91C06 /* LinearProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284C5212D060FAB00E91C06 /* LinearProgress.swift */; };
 		5284C5242D061BAD00E91C06 /* MillionaireGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284C5232D061BA500E91C06 /* MillionaireGameViewModel.swift */; };
-		5284C5352D06331200E91C06 /* Liv2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284C5342D06330F00E91C06 /* Liv2View.swift */; };
 		52CE94D82CA58AF700E15792 /* Helios___ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE94D72CA58AF700E15792 /* Helios___ProjectApp.swift */; };
 		52CE94DA2CA58AF700E15792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE94D92CA58AF700E15792 /* ContentView.swift */; };
 		52CE94DC2CA58AF800E15792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CE94DB2CA58AF800E15792 /* Assets.xcassets */; };
 		52CE94DF2CA58AF800E15792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CE94DE2CA58AF800E15792 /* Preview Assets.xcassets */; };
-		6603E5D72D04A725004885C2 /* TopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6603E5D62D04A725004885C2 /* TopicView.swift */; };
 		6603E5D92D04AB97004885C2 /* Topic1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6603E5D82D04AB97004885C2 /* Topic1View.swift */; };
-		6603E5DB2D04AFE0004885C2 /* Liv1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6603E5DA2D04AFE0004885C2 /* Liv1View.swift */; };
-		6603E5DE2D04B4DA004885C2 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6603E5DD2D04B4DA004885C2 /* PlayerModel.swift */; };
 		6603E5E42D04B7EF004885C2 /* MiniGame1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6603E5E32D04B7EF004885C2 /* MiniGame1.swift */; };
+		6603E6142D085E6C004885C2 /* CardCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6603E6132D085E6C004885C2 /* CardCarouselView.swift */; };
+		6603E6162D086475004885C2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6603E6152D086475004885C2 /* CardView.swift */; };
+		6603E61D2D09D46F004885C2 /* Minigame2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6603E61C2D09D46F004885C2 /* Minigame2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5284C51C2D06066500E91C06 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		5284C5212D060FAB00E91C06 /* LinearProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgress.swift; sourceTree = "<group>"; };
 		5284C5232D061BA500E91C06 /* MillionaireGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MillionaireGameViewModel.swift; sourceTree = "<group>"; };
-		5284C5342D06330F00E91C06 /* Liv2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liv2View.swift; sourceTree = "<group>"; };
 		52CE94D42CA58AF700E15792 /* Helios - Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Helios - Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CE94D72CA58AF700E15792 /* Helios___ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helios___ProjectApp.swift"; sourceTree = "<group>"; };
 		52CE94D92CA58AF700E15792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		52CE94DB2CA58AF800E15792 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52CE94DE2CA58AF800E15792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		6603E5D62D04A725004885C2 /* TopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicView.swift; sourceTree = "<group>"; };
 		6603E5D82D04AB97004885C2 /* Topic1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic1View.swift; sourceTree = "<group>"; };
-		6603E5DA2D04AFE0004885C2 /* Liv1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liv1View.swift; sourceTree = "<group>"; };
-		6603E5DD2D04B4DA004885C2 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		6603E5E32D04B7EF004885C2 /* MiniGame1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame1.swift; sourceTree = "<group>"; };
+		6603E6132D085E6C004885C2 /* CardCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCarouselView.swift; sourceTree = "<group>"; };
+		6603E6152D086475004885C2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		6603E61C2D09D46F004885C2 /* Minigame2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minigame2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5284C5252D061F4C00E91C06 /* AudioFiles */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AudioFiles; sourceTree = "<group>"; };
+		6603E6172D088CC5004885C2 /* Commented */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Commented; sourceTree = "<group>"; };
+		6603E6192D088CF2004885C2 /* Model and View Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Model and View Model"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +57,7 @@
 		52CE94CB2CA58AF700E15792 = {
 			isa = PBXGroup;
 			children = (
+				6603E61C2D09D46F004885C2 /* Minigame2.swift */,
 				52CE94D62CA58AF700E15792 /* Helios - Project */,
 				52CE94D52CA58AF700E15792 /* Products */,
 			);
@@ -74,17 +75,17 @@
 			isa = PBXGroup;
 			children = (
 				5284C5252D061F4C00E91C06 /* AudioFiles */,
-				5284C5212D060FAB00E91C06 /* LinearProgress.swift */,
-				5284C51C2D06066500E91C06 /* BackButton.swift */,
 				52CE94D72CA58AF700E15792 /* Helios___ProjectApp.swift */,
-				6603E5DD2D04B4DA004885C2 /* PlayerModel.swift */,
+				5284C51C2D06066500E91C06 /* BackButton.swift */,
+				5284C5212D060FAB00E91C06 /* LinearProgress.swift */,
 				52CE94D92CA58AF700E15792 /* ContentView.swift */,
-				6603E5D62D04A725004885C2 /* TopicView.swift */,
+				6603E6132D085E6C004885C2 /* CardCarouselView.swift */,
+				6603E6152D086475004885C2 /* CardView.swift */,
 				6603E5D82D04AB97004885C2 /* Topic1View.swift */,
-				6603E5DA2D04AFE0004885C2 /* Liv1View.swift */,
 				6603E5E32D04B7EF004885C2 /* MiniGame1.swift */,
 				5284C5232D061BA500E91C06 /* MillionaireGameViewModel.swift */,
-				5284C5342D06330F00E91C06 /* Liv2View.swift */,
+				6603E6192D088CF2004885C2 /* Model and View Model */,
+				6603E6172D088CC5004885C2 /* Commented */,
 				52CE94DB2CA58AF800E15792 /* Assets.xcassets */,
 				52CE94DD2CA58AF800E15792 /* Preview Content */,
 			);
@@ -116,6 +117,8 @@
 			);
 			fileSystemSynchronizedGroups = (
 				5284C5252D061F4C00E91C06 /* AudioFiles */,
+				6603E6172D088CC5004885C2 /* Commented */,
+				6603E6192D088CF2004885C2 /* Model and View Model */,
 			);
 			name = "Helios - Project";
 			productName = "Helios - Project";
@@ -175,14 +178,13 @@
 				5284C51D2D06066900E91C06 /* BackButton.swift in Sources */,
 				5284C5222D060FAB00E91C06 /* LinearProgress.swift in Sources */,
 				5284C5242D061BAD00E91C06 /* MillionaireGameViewModel.swift in Sources */,
-				6603E5DE2D04B4DA004885C2 /* PlayerModel.swift in Sources */,
-				6603E5DB2D04AFE0004885C2 /* Liv1View.swift in Sources */,
+				6603E61D2D09D46F004885C2 /* Minigame2.swift in Sources */,
+				6603E6162D086475004885C2 /* CardView.swift in Sources */,
 				52CE94DA2CA58AF700E15792 /* ContentView.swift in Sources */,
 				52CE94D82CA58AF700E15792 /* Helios___ProjectApp.swift in Sources */,
+				6603E6142D085E6C004885C2 /* CardCarouselView.swift in Sources */,
 				6603E5D92D04AB97004885C2 /* Topic1View.swift in Sources */,
-				5284C5352D06331200E91C06 /* Liv2View.swift in Sources */,
 				6603E5E42D04B7EF004885C2 /* MiniGame1.swift in Sources */,
-				6603E5D72D04A725004885C2 /* TopicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +318,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Helios - Project/Preview Content\"";
-				DEVELOPMENT_TEAM = V7ZAPSKXZ6;
+				DEVELOPMENT_TEAM = 56RG6J6GAY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Furaha;
@@ -346,7 +348,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Helios - Project/Preview Content\"";
-				DEVELOPMENT_TEAM = V7ZAPSKXZ6;
+				DEVELOPMENT_TEAM = 56RG6J6GAY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Furaha;
