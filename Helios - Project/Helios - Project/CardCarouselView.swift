@@ -49,15 +49,14 @@ struct CardCarouselView: View {
         }
         .fullScreenCover(isPresented: $isPresentingFullScreenCover) {
             Topic1View(card: viewModel.cards[selectedCardIndex])
-                .transition(.scale.animation(.easeIn))
-        }  .transaction { transaction in
-            transaction.disablesAnimations = true
-               
-
+            // //        }  .transaction { transaction in
+            //            transaction.disablesAnimations = true
+            //               
+            //
+            //        }
         }
     }
 }
-
 
 
 struct CardCarouselView_Previews: PreviewProvider {

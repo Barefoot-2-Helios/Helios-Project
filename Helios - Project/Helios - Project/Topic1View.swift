@@ -84,7 +84,6 @@ struct Topic1View: View {
             }
                     
                 }
-            .transition(.scale.animation(.easeInOut))
 
             }
         .onAppear { isShowing = true }
