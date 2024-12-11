@@ -44,14 +44,14 @@ struct CardCarouselView: View {
                         .frame(width: 10, height: 10)
                 }
             }
-            .padding(.top, 20)
-            Spacer()
+            .offset(y: -90)
+//            .padding(.top, 20)
         }
         .fullScreenCover(isPresented: $isPresentingFullScreenCover) {
             Topic1View(card: viewModel.cards[selectedCardIndex])
             // //        }  .transaction { transaction in
             //            transaction.disablesAnimations = true
-            //               
+            //
             //
             //        }
         }

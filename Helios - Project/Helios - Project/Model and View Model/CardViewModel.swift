@@ -10,11 +10,10 @@ import SwiftUI
 
 class CardViewModel: ObservableObject {
     @Published var cards: [Card] = [
-        Card(cardLabel: "This is card 1", cardImage: ["house", "house"], cardBackground: .senape),
-        Card(cardLabel: "This is card 2", cardImage: ["house", "house"], cardBackground: .blue),
-        Card(cardLabel: "This is card 3", cardImage: ["house", "house"], cardBackground: .yellow),
-        Card(cardLabel: "This is card 4", cardImage: ["house", "house"], cardBackground: .orange),
-        Card(cardLabel: "This is card 5", cardImage: ["house", "house"], cardBackground: .purple),
-        Card(cardLabel: "This is card 6", cardImage: ["house", "house"], cardBackground: .cyan)
+        Card(cardLabel: "Electronic Components", cardImage: ["box"], cardBackground: .senape),
+        Card(cardLabel: "Topic 2", cardImage: ["box"], cardBackground: .marroncino),
+        Card(cardLabel: "Topic 3", cardImage: ["box"], cardBackground: .corallo),
+        Card(cardLabel: "Topic 4", cardImage: ["box"], cardBackground: .rosino),
+        Card(cardLabel: "Topic 5", cardImage: ["box"], cardBackground: .rossino)
     ]
 }

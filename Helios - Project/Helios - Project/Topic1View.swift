@@ -18,7 +18,7 @@ struct Topic1View: View {
     
     var body: some View {
         ZStack {
-            card.cardBackground
+            Color.white
                 .edgesIgnoringSafeArea(.all)
             
             VStack{
@@ -28,12 +28,14 @@ struct Topic1View: View {
                     HStack {
                         ZStack {
                             Circle()
-                                .foregroundStyle(.white)
-                                .frame(width: 220)
+                                .foregroundStyle(card.cardBackground).frame(width: 220)
                                 
                             VStack{
                                 Text("Liv 1")
+                                    .fontWeight(.medium)
+                                    .font(.title)
                                 Image("liv1")
+                                    .padding(.top, 15)
                             }
                         }
                         .padding(.leading, 100)
@@ -50,35 +52,65 @@ struct Topic1View: View {
                         Spacer()
                         ZStack{
                             Circle()
-                                .foregroundStyle(.white)
-                                .frame(width: 220)
+                                .foregroundStyle(card.cardBackground)      .frame(width: 220)
                             VStack{
                                 Text("Liv 2")
+                                    .fontWeight(.medium)
+                                    .font(.title)
                                 Image("liv2")
+                                    .padding(.top, 15)
+
                             }
-                        }                                .padding(.trailing, 100)
+                        }.padding(.trailing, 100)
 
                     }
                     HStack {
-                        Circle()
-                            .foregroundStyle(.white)
-                            .frame(width: 220)
-                            .padding(.leading, 100)
+                        ZStack{
+                            Circle()
+                                .foregroundStyle(card.cardBackground).frame(width: 220)
+                            VStack{
+                                Text("Liv 3")
+                                    .fontWeight(.medium)
+                                    .font(.title)
+                                Image("liv3")
+                                    .padding(.top, 15)
+
+                            }
+                                
+                        }.padding(.leading, 100)
                         Spacer()
                     }
                     HStack {
                         Spacer()
-                        Circle()
-                            .foregroundStyle(.white
-                            )
-                            .frame(width: 220)
-                            .padding(.trailing, 100)
+                        ZStack {
+                            Circle()
+                                .foregroundStyle(card.cardBackground)
+                                .frame(width: 220)
+                            VStack{
+                                Text("Liv 4")
+                                    .fontWeight(.medium)
+                                    .font(.title)
+                                Image("liv4")
+                                    .padding(.top, 15)
+
+                            }
+                                
+                        }.padding(.trailing, 100)
                     }
                     HStack {
-                        Circle()
-                            .foregroundStyle(.white)
-                            .frame(width: 220)
-                            .padding(.leading, 100)
+                        ZStack {
+                            Circle()
+                                .foregroundStyle(card.cardBackground).frame(width: 220)
+                            VStack{
+                                Text("Liv 5")
+                                    .fontWeight(.medium)
+                                    .font(.title)
+                                Image("liv5")
+                                    .padding(.top, 15)
+
+                            }
+                        }.padding(.leading, 100)
+
                         Spacer()
                     }
             }
