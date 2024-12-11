@@ -93,14 +93,10 @@ struct MiniGame1: View {
                         }
                         
                     }
-                    .offset(x:10, y:100)
 
                     
-                }.fullScreenCover(isPresented: $showDetail) {
-                    MiniGame2()
-                    
                 }
-            }
+            }   .navigationDestination(isPresented: $showDetail) { MiniGame2()}
                 .navigationBarBackButtonHidden(true)
                 .navigationBarItems(leading: BackButton( isForegroundWhite: true))
          

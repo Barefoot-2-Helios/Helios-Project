@@ -29,8 +29,6 @@ struct MiniGame2: View {
         ZStack {
             Color.senape.ignoresSafeArea()
             VStack{
-                BackButton(isForegroundWhite: true)
-                    .offset(x:-40, y:-100)
 
                 
                 VStack{
@@ -47,7 +45,7 @@ struct MiniGame2: View {
                         .onAppear(){
                             GameViewModel.startGame()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                mediaPlayer.playAudio(fileName: "Diode", fileExtension: "mp3")
+                                mediaPlayer.playAudio(fileName: "Diode3D", fileExtension: "mp3")
                             }
                             
                         }
@@ -101,13 +99,11 @@ struct MiniGame2: View {
                             }
                         }
                         
-                    }
-                    .offset(x:10, y:90)
+                    }  .navigationBarBackButtonHidden(true)
+                        .navigationBarItems(leading: BackButton( isForegroundWhite: true))
+                        .navigationDestination(isPresented: $showDetail) { Liv2View()}
+                  
                     
-                    
-                }.fullScreenCover(isPresented: $showDetail) {
-                    Liv2View()
-                        .transition(.slide)
                     
                 }
             }
