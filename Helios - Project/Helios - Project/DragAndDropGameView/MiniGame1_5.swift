@@ -23,6 +23,7 @@ struct MiniGame1_5: View {
     @Environment(DragAndDropComponentViewModel.self) private var componentViewModel
     
     var body: some View {
+        
         NavigationStack {
             ZStack {
                 Color.senape.ignoresSafeArea()
