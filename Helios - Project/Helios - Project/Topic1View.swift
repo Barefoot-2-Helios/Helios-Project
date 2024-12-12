@@ -23,7 +23,6 @@ struct Topic1View: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack{
-                BackButton(isForegroundWhite: true)
       
                 ScrollView(.vertical) {
                     HStack {

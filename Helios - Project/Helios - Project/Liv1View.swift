@@ -12,7 +12,8 @@ struct Liv1View: View {
     @State private var showDetail = false
     
     var body: some View {
-        VStack(alignment: .center) {
+        VStack{
+            VStack(alignment: .center) {
                 // Titolo del livello
                 Text("LEVEL 1")
                     .fontWeight(.bold)
@@ -35,8 +36,8 @@ struct Liv1View: View {
                     .font(.system(size: 80))
                 
             }
-                .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading: BackButton( isForegroundWhite: true))// Attach custom button
+        }
+          
                 .navigationDestination(isPresented: $showDetail) { MiniGame1()}
                 .onAppear(){
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
