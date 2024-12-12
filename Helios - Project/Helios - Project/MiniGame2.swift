@@ -32,8 +32,8 @@ struct MiniGame2: View {
 
                 
                 VStack{
-                    
-                    Image("diodeReal")
+                    Spacer()
+                    Image("DiodeReal")
                         .font(.system(size: 100))
                         .offset(x:10, y:-70)
 
@@ -49,13 +49,14 @@ struct MiniGame2: View {
                             }
                             
                         }
+                        .padding(.bottom, 70)
                         .onTapGesture {
                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
                         }
         
                     
                     
-                    
+//                    Spacer()
                     
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 50) {
                         ForEach(answerList, id: \.self) { answer in
@@ -99,7 +100,8 @@ struct MiniGame2: View {
                             }
                         }
                         
-                    }  .navigationBarBackButtonHidden(true)
+                    }.padding()
+                    .navigationBarBackButtonHidden(true)
                         .navigationBarItems(leading: BackButton( isForegroundWhite: true))
                         .navigationDestination(isPresented: $showDetail) { Liv2View()}
                   

@@ -12,7 +12,7 @@ import SwiftUI
 class DragAndDropComponentViewModel {
     var componentsList: [ComponentModel] {
         [
-            ComponentModel(componentName: "diode", componentImage: "diodeReal", componentDestinationImage: "DiodeDestination"),
+            ComponentModel(componentName: "diode", componentImage: "DiodeReal", componentDestinationImage: "DiodeDestination"),
             ComponentModel(componentName: "resistor", componentImage: "resistor", componentDestinationImage: "ResistorDestination"),
             ComponentModel(componentName: "connector", componentImage: "Connector", componentDestinationImage: "ConnectorDestination"),
             ComponentModel(componentName: "blueCapacitor", componentImage: "BlueCapacitor47", componentDestinationImage: "blueCapacitorDestination")

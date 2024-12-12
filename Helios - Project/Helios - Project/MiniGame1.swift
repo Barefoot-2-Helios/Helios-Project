@@ -31,16 +31,18 @@ struct MiniGame1: View {
                 
                 
                 VStack{
+                    Spacer()
                     Group{
                         Text("DIODE")
                             .fontWeight(.bold)
                             .foregroundColor(.white)
-                            .font(.system(size: 70))
+                            .font(.system(size: 100))
                         
                         
                         Image(systemName: "speaker.wave.3")
                             .font(.system(size: 100))
                             .foregroundStyle(.white)
+                            .padding(.top, 15)
                     }
                     .onAppear(){
                         GameViewModel.startGame()
@@ -54,7 +56,7 @@ struct MiniGame1: View {
                         mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
                     }
                     
-                    
+                    Spacer()
                     
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 30) {
                         ForEach(GameViewModel.showedAnswers, id: \.self) { answer in
@@ -112,8 +114,8 @@ struct MiniGame1: View {
         
 
 
-//#Preview {
-//    MiniGame1(namespace: ., card: <#Card#>)
-//        .environment(PlayerModel())
-//        .environment(MillionaireGameViewModel())
-//}
+#Preview {
+    MiniGame1()
+        .environment(PlayerModel())
+        .environment(MillionaireGameViewModel())
+}

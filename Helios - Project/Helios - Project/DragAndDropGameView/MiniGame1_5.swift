@@ -43,8 +43,8 @@ struct MiniGame1_5: View {
                                 ComponentDestinatioView(componentDestination: .constant(componentViewModel.componentsList[1]), correctAnswer: $correctAnswer)
                             }
                             Spacer()
-                        }
-                        Spacer()
+                        }.padding(.bottom, 40)
+//                        Spacer()
                     }
                 }
             }

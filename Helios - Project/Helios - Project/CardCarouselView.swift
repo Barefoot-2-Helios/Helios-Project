@@ -39,6 +39,7 @@ struct CardCarouselView: View {
                         }
                     }
                 }
+                 
                 HStack {
                     ForEach(viewModel.cards.indices, id: \.self) { index in
                         Circle()
@@ -46,7 +47,8 @@ struct CardCarouselView: View {
                             .frame(width: 10, height: 10)
                     }
                 }
-                .offset(y: -90)
+//                Spacer()¡
+                .offset(y: -100)
                 //            .padding(.top, 20)
             }
             .navigationDestination(isPresented: $isPresentingFullScreenCover) {   Topic1View(card: viewModel.cards[selectedCardIndex])}
