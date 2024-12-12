@@ -27,7 +27,6 @@ struct MiniGame1_5: View {
             ZStack {
                 Color.senape.ignoresSafeArea()
                 VStack{
-                    BackButton(isForegroundWhite: true)
                     VStack {
                         Spacer()
                         ZStack{

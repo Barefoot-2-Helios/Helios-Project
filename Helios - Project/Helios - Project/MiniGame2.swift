@@ -33,7 +33,7 @@ struct MiniGame2: View {
                 
                 VStack{
                     
-                    Image("DiodeReal")
+                    Image("diodeReal")
                         .font(.system(size: 100))
                         .offset(x:10, y:-70)
 

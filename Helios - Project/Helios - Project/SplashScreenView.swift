@@ -38,3 +38,11 @@ struct SplashScreenView: View {
 #Preview {
     SplashScreenView()
 }
+
+/*
+APP ICON VIN
+BACK Button REN
+NAVIGATION DA 1.5 A 2 STRANA BEN
+ULTIMA SCREEN  LET con bottone che riporta a carosello 
+KEY NOTE
+*/
