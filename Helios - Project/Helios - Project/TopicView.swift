@@ -4,7 +4,7 @@
 //
 //  Created by Letizia Granata on 07/12/24.
 //
-
+/*
 import SwiftUI
 
 struct TopicView: View {
@@ -31,7 +31,7 @@ struct TopicView: View {
                             .onTapGesture {
                                 showDetail = true
                             }
-                            .navigationDestination(isPresented: $showDetail) { Topic1View()}
+                            .navigationDestination(isPresented: $showDetail) { Topic1View(card: Card(cardLabel: <#T##String#>, cardImage: <#T##[String]#>, cardBackground: <#T##Color#>))}
                         Spacer()
                     }
                     HStack {
@@ -74,3 +74,4 @@ struct TopicView: View {
 #Preview {
     TopicView()
 }
+*/

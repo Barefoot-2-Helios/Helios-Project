@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @State var showSplash = true
-    
+
     var body: some View {
         NavigationStack{
             ZStack {
-                TopicView()
+                CardCarouselView()
                 SplashScreenView()
                     .opacity(showSplash ? 1 : 0)
                     .onAppear {

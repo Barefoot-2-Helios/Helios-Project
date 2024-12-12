@@ -19,6 +19,18 @@
 		6603E6142D085E6C004885C2 /* CardCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6603E6132D085E6C004885C2 /* CardCarouselView.swift */; };
 		6603E6162D086475004885C2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6603E6152D086475004885C2 /* CardView.swift */; };
 		6603E61D2D09D46F004885C2 /* Minigame2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6603E61C2D09D46F004885C2 /* Minigame2.swift */; };
+		6663818E2D0AECE100C12E50 /* MiniGame2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6663818D2D0AECE100C12E50 /* MiniGame2.swift */; };
+		666381912D0AECFC00C12E50 /* Liv2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666381902D0AECFC00C12E50 /* Liv2View.swift */; };
+		666381922D0AECFC00C12E50 /* Liv1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6663818F2D0AECFC00C12E50 /* Liv1View.swift */; };
+		666381942D0AED0A00C12E50 /* MiniGame3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666381932D0AED0A00C12E50 /* MiniGame3.swift */; };
+		666381962D0AED1200C12E50 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666381952D0AED1200C12E50 /* SplashScreenView.swift */; };
+		666381982D0AED1F00C12E50 /* TopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666381972D0AED1F00C12E50 /* TopicView.swift */; };
+		666381A02D0AED3900C12E50 /* DragAndDropComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6663819B2D0AED3900C12E50 /* DragAndDropComponentViewModel.swift */; };
+		666381A12D0AED3900C12E50 /* DragGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6663819C2D0AED3900C12E50 /* DragGameView.swift */; };
+		666381A22D0AED3900C12E50 /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6663819E2D0AED3900C12E50 /* UTType+Extension.swift */; };
+		666381A32D0AED3900C12E50 /* StartingComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6663819D2D0AED3900C12E50 /* StartingComponentView.swift */; };
+		666381A42D0AED3900C12E50 /* ComponentDestinatioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666381992D0AED3900C12E50 /* ComponentDestinatioView.swift */; };
+		666381A52D0AED3900C12E50 /* DragAndDropComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6663819A2D0AED3900C12E50 /* DragAndDropComponentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +47,22 @@
 		6603E6132D085E6C004885C2 /* CardCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCarouselView.swift; sourceTree = "<group>"; };
 		6603E6152D086475004885C2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		6603E61C2D09D46F004885C2 /* Minigame2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minigame2.swift; sourceTree = "<group>"; };
+		6663818D2D0AECE100C12E50 /* MiniGame2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame2.swift; sourceTree = "<group>"; };
+		6663818F2D0AECFC00C12E50 /* Liv1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liv1View.swift; sourceTree = "<group>"; };
+		666381902D0AECFC00C12E50 /* Liv2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liv2View.swift; sourceTree = "<group>"; };
+		666381932D0AED0A00C12E50 /* MiniGame3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3.swift; sourceTree = "<group>"; };
+		666381952D0AED1200C12E50 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		666381972D0AED1F00C12E50 /* TopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicView.swift; sourceTree = "<group>"; };
+		666381992D0AED3900C12E50 /* ComponentDestinatioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDestinatioView.swift; sourceTree = "<group>"; };
+		6663819A2D0AED3900C12E50 /* DragAndDropComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropComponentModel.swift; sourceTree = "<group>"; };
+		6663819B2D0AED3900C12E50 /* DragAndDropComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropComponentViewModel.swift; sourceTree = "<group>"; };
+		6663819C2D0AED3900C12E50 /* DragGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGameView.swift; sourceTree = "<group>"; };
+		6663819D2D0AED3900C12E50 /* StartingComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingComponentView.swift; sourceTree = "<group>"; };
+		6663819E2D0AED3900C12E50 /* UTType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTType+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5284C5252D061F4C00E91C06 /* AudioFiles */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AudioFiles; sourceTree = "<group>"; };
-		6603E6172D088CC5004885C2 /* Commented */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Commented; sourceTree = "<group>"; };
 		6603E6192D088CF2004885C2 /* Model and View Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Model and View Model"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -79,13 +102,19 @@
 				5284C51C2D06066500E91C06 /* BackButton.swift */,
 				5284C5212D060FAB00E91C06 /* LinearProgress.swift */,
 				52CE94D92CA58AF700E15792 /* ContentView.swift */,
+				6663819F2D0AED3900C12E50 /* DragAndDropGameView */,
 				6603E6132D085E6C004885C2 /* CardCarouselView.swift */,
+				666381932D0AED0A00C12E50 /* MiniGame3.swift */,
 				6603E6152D086475004885C2 /* CardView.swift */,
+				6663818F2D0AECFC00C12E50 /* Liv1View.swift */,
+				666381902D0AECFC00C12E50 /* Liv2View.swift */,
+				666381952D0AED1200C12E50 /* SplashScreenView.swift */,
+				6663818D2D0AECE100C12E50 /* MiniGame2.swift */,
+				666381972D0AED1F00C12E50 /* TopicView.swift */,
 				6603E5D82D04AB97004885C2 /* Topic1View.swift */,
 				6603E5E32D04B7EF004885C2 /* MiniGame1.swift */,
 				5284C5232D061BA500E91C06 /* MillionaireGameViewModel.swift */,
 				6603E6192D088CF2004885C2 /* Model and View Model */,
-				6603E6172D088CC5004885C2 /* Commented */,
 				52CE94DB2CA58AF800E15792 /* Assets.xcassets */,
 				52CE94DD2CA58AF800E15792 /* Preview Content */,
 			);
@@ -98,6 +127,19 @@
 				52CE94DE2CA58AF800E15792 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6663819F2D0AED3900C12E50 /* DragAndDropGameView */ = {
+			isa = PBXGroup;
+			children = (
+				666381992D0AED3900C12E50 /* ComponentDestinatioView.swift */,
+				6663819A2D0AED3900C12E50 /* DragAndDropComponentModel.swift */,
+				6663819B2D0AED3900C12E50 /* DragAndDropComponentViewModel.swift */,
+				6663819C2D0AED3900C12E50 /* DragGameView.swift */,
+				6663819D2D0AED3900C12E50 /* StartingComponentView.swift */,
+				6663819E2D0AED3900C12E50 /* UTType+Extension.swift */,
+			);
+			path = DragAndDropGameView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,7 +159,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				5284C5252D061F4C00E91C06 /* AudioFiles */,
-				6603E6172D088CC5004885C2 /* Commented */,
 				6603E6192D088CF2004885C2 /* Model and View Model */,
 			);
 			name = "Helios - Project";
@@ -178,13 +219,25 @@
 				5284C51D2D06066900E91C06 /* BackButton.swift in Sources */,
 				5284C5222D060FAB00E91C06 /* LinearProgress.swift in Sources */,
 				5284C5242D061BAD00E91C06 /* MillionaireGameViewModel.swift in Sources */,
+				666381912D0AECFC00C12E50 /* Liv2View.swift in Sources */,
+				666381942D0AED0A00C12E50 /* MiniGame3.swift in Sources */,
+				666381922D0AECFC00C12E50 /* Liv1View.swift in Sources */,
 				6603E61D2D09D46F004885C2 /* Minigame2.swift in Sources */,
 				6603E6162D086475004885C2 /* CardView.swift in Sources */,
 				52CE94DA2CA58AF700E15792 /* ContentView.swift in Sources */,
 				52CE94D82CA58AF700E15792 /* Helios___ProjectApp.swift in Sources */,
 				6603E6142D085E6C004885C2 /* CardCarouselView.swift in Sources */,
+				666381982D0AED1F00C12E50 /* TopicView.swift in Sources */,
+				666381962D0AED1200C12E50 /* SplashScreenView.swift in Sources */,
+				666381A02D0AED3900C12E50 /* DragAndDropComponentViewModel.swift in Sources */,
+				666381A12D0AED3900C12E50 /* DragGameView.swift in Sources */,
+				666381A22D0AED3900C12E50 /* UTType+Extension.swift in Sources */,
+				666381A32D0AED3900C12E50 /* StartingComponentView.swift in Sources */,
+				666381A42D0AED3900C12E50 /* ComponentDestinatioView.swift in Sources */,
+				666381A52D0AED3900C12E50 /* DragAndDropComponentModel.swift in Sources */,
 				6603E5D92D04AB97004885C2 /* Topic1View.swift in Sources */,
 				6603E5E42D04B7EF004885C2 /* MiniGame1.swift in Sources */,
+				6663818E2D0AECE100C12E50 /* MiniGame2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SplashScreenView: View {
     
-    @State private var showDetail = false
-    
     var body: some View {
         ZStack {
             
@@ -24,7 +22,7 @@ struct SplashScreenView: View {
                     .font(.system(size: 80))
                     .foregroundStyle(.giallino)
                 Spacer()
-                Text("\nFURAHA!")
+                Text("\nBRIGHT!")
                     .fontWeight(.bold)
                     .font(.system(size: 90))
                     .foregroundStyle(.giallino)
@@ -33,12 +31,6 @@ struct SplashScreenView: View {
                     
             }
            
-        }
-        .onTapGesture {
-            showDetail = true
-        }
-        .fullScreenCover(isPresented: $showDetail) {
-            TopicView()
         }
     }
 }

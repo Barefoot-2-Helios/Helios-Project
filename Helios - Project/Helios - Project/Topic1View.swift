@@ -125,7 +125,6 @@ struct Topic1View: View {
                .onDisappear { isShowing = false }
         }
 
-    }
 }
 
 
