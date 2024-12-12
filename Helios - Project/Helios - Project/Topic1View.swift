@@ -11,77 +11,128 @@ struct Topic1View: View {
     
     @Environment(\.dismiss) var dismiss // Access to dismiss the view
     @State private var showDetail = false
+    @State private var isShowing = false
+
+    var card: Card
+    
     
     var body: some View {
+
+        ZStack {
+            Color.white
+                .edgesIgnoringSafeArea(.all)
+            
             VStack{
-                ZStack {
-                    Color.senape.ignoresSafeArea()
-                    VStack{
-                        ScrollView(.vertical) {
-                            HStack {
-                                    ZStack {
-                                        
-                                        Circle()
-                                            .foregroundStyle(.white)
-                                            .frame(width: 220)
-                                            
-                                            VStack{
-                                                
-                                                Text("Liv 1")
-                                                Image("liv1")
-                                            }
-                                    }.padding(.leading, 100)
-                                    
-                                        .onTapGesture {
-                                            showDetail = true
-                                        }
-                                        .navigationDestination(isPresented: $showDetail) { Liv1View()}
-                                    Spacer()
-                                }
-                            }
-                            HStack {
-                                Spacer()
-                                ZStack{
-                                    Circle()
-                                        .foregroundStyle(.white)
-                                        .frame(width: 220)
-                                    VStack{
-                                        Text("Liv 2")
-                                        Image("liv2")
-                                    }
-                                }                                .padding(.trailing, 100)
+                BackButton(isForegroundWhite: true)
+      
+                ScrollView(.vertical) {
+                    HStack {
+                        ZStack {
+                            Circle()
+                                .foregroundStyle(card.cardBackground).frame(width: 220)
                                 
-                            }
-                            HStack {
-                                Circle()
-                                    .foregroundStyle(.white)
-                                    .frame(width: 220)
-                                    .padding(.leading, 100)
-                                Spacer()
-                            }
-                            HStack {
-                                Spacer()
-                                Circle()
-                                    .foregroundStyle(.white
-                                    )
-                                    .frame(width: 220)
-                                    .padding(.trailing, 100)
-                            }
-                            HStack {
-                                Circle()
-                                    .foregroundStyle(.white)
-                                    .frame(width: 220)
-                                    .padding(.leading, 100)
+                            VStack{
+                                Text("Liv 1")
+                                    .fontWeight(.medium)
+                                    .font(.title)
+                                Image("liv1")
+                                    .padding(.top, 15)
                             }
                         }
+                        .padding(.leading, 100)
                         
+                        .onTapGesture {
+                            showDetail = true
+                        }
+                        .fullScreenCover(isPresented: $showDetail) {
+                            MiniGame1()
+                        }
+                        Spacer()
                     }
-                } .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: BackButton( isForegroundWhite: true))
+                    HStack {
+                        Spacer()
+                        ZStack{
+                            Circle()
+                                .foregroundStyle(card.cardBackground)      .frame(width: 220)
+                            VStack{
+                                Text("Liv 2")
+                                    .fontWeight(.medium)
+                                    .font(.title)
+                                Image("liv2")
+                                    .padding(.top, 15)
+
+                            }
+                        }.padding(.trailing, 100)
+
+                    }
+                    HStack {
+                        ZStack{
+                            Circle()
+                                .foregroundStyle(card.cardBackground).frame(width: 220)
+                            VStack{
+                                Text("Liv 3")
+                                    .fontWeight(.medium)
+                                    .font(.title)
+                                Image("liv3")
+                                    .padding(.top, 15)
+
+                            }
+                                
+                        }.padding(.leading, 100)
+                        Spacer()
+                    }
+                    HStack {
+                        Spacer()
+                        ZStack {
+                            Circle()
+                                .foregroundStyle(card.cardBackground)
+                                .frame(width: 220)
+                            VStack{
+                                Text("Liv 4")
+                                    .fontWeight(.medium)
+                                    .font(.title)
+                                Image("liv4")
+                                    .padding(.top, 15)
+
+                            }
+                                
+                        }.padding(.trailing, 100)
+                    }
+                    HStack {
+                        ZStack {
+                            Circle()
+                                .foregroundStyle(card.cardBackground).frame(width: 220)
+                            VStack{
+                                Text("Liv 5")
+                                    .fontWeight(.medium)
+                                    .font(.title)
+                                Image("liv5")
+                                    .padding(.top, 15)
+
+                            }
+                        }.padding(.leading, 100)
+
+                        Spacer()
+                    }
+            }
+                    
+                }
+
+            }
+        .navigationBarBackButtonHidden(true)
+    .navigationBarItems(leading: BackButton( isForegroundWhite: true))
+        .onAppear { isShowing = true }
+               .onDisappear { isShowing = false }
+        }
+
     }
 }
 
 
 #Preview {
-    Topic1View()
+    Topic1View(card: Card(
+        cardLabel: "ciao",
+        cardImage: ["house"],
+        cardBackground: .senape
+    ))
 }

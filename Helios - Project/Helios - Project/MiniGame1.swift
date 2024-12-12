@@ -9,10 +9,10 @@ import SwiftUI
 import AVFAudio
 
 struct MiniGame1: View {
+
     
     @State var showSplash = true
-    
- 
+
     @Environment(PlayerModel.self) private var mediaPlayer
     @Environment(MillionaireGameViewModel.self) private var GameViewModel
     
@@ -20,9 +20,10 @@ struct MiniGame1: View {
     @State private var showDetail = false
     @State private var points = 0
     @State private var selectedAnswer: String? = nil
+
     @State private var fillPercentage: CGFloat = 78
 
-    
+
     var body: some View {
         ZStack {
             Color.senape.ignoresSafeArea()
@@ -46,6 +47,7 @@ struct MiniGame1: View {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 mediaPlayer.playAudio(fileName: "Diode3D", fileExtension: "mp3")
                             }
+
                             
                         }
                         .onTapGesture {
@@ -96,18 +98,21 @@ struct MiniGame1: View {
 
                     
                 }
+
             }   .navigationDestination(isPresented: $showDetail) { MiniGame2()}
                 .navigationBarBackButtonHidden(true)
                 .navigationBarItems(leading: BackButton( isForegroundWhite: true))
          
         }
     }
-}
+
+               
+            }
+        
 
 
-
-#Preview {
-    MiniGame1()
-        .environment(PlayerModel())
-        .environment(MillionaireGameViewModel())
-}
+//#Preview {
+//    MiniGame1(namespace: ., card: <#Card#>)
+//        .environment(PlayerModel())
+//        .environment(MillionaireGameViewModel())
+//}

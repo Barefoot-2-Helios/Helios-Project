@@ -14,10 +14,10 @@ struct HeliosProjectApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            DragGameView()
-            .environment(mediaPlayer)
-            .environment(milionaireGameViwModel)
-            .environment(componentViewModel)
+            CardCarouselView()
+                .environment(mediaPlayer)
+                .environment(milionaireGameViwModel)
+                .environment(componentViewModel)
         }
     }
 }
