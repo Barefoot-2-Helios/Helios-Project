@@ -23,7 +23,6 @@ struct Topic1View: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack{
-                BackButton(isForegroundWhite: true)
       
                 ScrollView(.vertical) {
                     HStack {
@@ -60,7 +59,6 @@ struct Topic1View: View {
                                     .font(.title)
                                 Image("liv2")
                                     .padding(.top, 15)
-
                             }
                         }.padding(.trailing, 100)
 

@@ -48,14 +48,7 @@ struct CardCarouselView: View {
                 .offset(y: -90)
                 //            .padding(.top, 20)
             }
-            .fullScreenCover(isPresented: $isPresentingFullScreenCover) {
-                Topic1View(card: viewModel.cards[selectedCardIndex])
-                // //        }  .transaction { transaction in
-                //            transaction.disablesAnimations = true
-                //
-                //
-                //        }
-            }
+            .navigationDestination(isPresented: $isPresentingFullScreenCover) { SplashAppoggioView()}
         }
     }
 }

@@ -21,7 +21,6 @@ struct Liv2View: View {
             Color.senape.ignoresSafeArea()
             VStack{
                                              
-                BackButton(isForegroundWhite: true)
 
                 Spacer()
                 Text("Liv 3")

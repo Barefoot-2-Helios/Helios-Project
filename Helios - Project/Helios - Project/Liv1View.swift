@@ -12,7 +12,8 @@ struct Liv1View: View {
     @State private var showDetail = false
     
     var body: some View {
-            VStack() {
+        VStack{
+            VStack(alignment: .center) {
                 // Titolo del livello
                 Text("LEVEL 1")
                     .fontWeight(.bold)
@@ -24,7 +25,7 @@ struct Liv1View: View {
                 Image("Diode3D") // Assicurati che l'immagine si chiami "diodeImage" e sia nel tuo asset catalog
                     .resizable()
                     .scaledToFit()
-                    .frame(width:4500, height: 400)
+                    .frame(width:3700, height: 370)
                     .padding(90)// Dimensioni dell'immagine
                 
                 
@@ -32,19 +33,16 @@ struct Liv1View: View {
                 Text("DIODE")
                     .fontWeight(.bold)
                     .foregroundColor(.senape)
-                    .font(.system(size: 70))
+                    .font(.system(size: 80))
                 
             }
-                .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading: BackButton( isForegroundWhite: true))// Attach custom button
+        }
+          
                 .navigationDestination(isPresented: $showDetail) { MiniGame1()}
                 .onAppear(){
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         self.showDetail.toggle()
                     }
-                    /* .fullScreenCover(isPresented: $showDetail) {
-                     MiniGame1()
-                     }*/
                 }
             
         }
