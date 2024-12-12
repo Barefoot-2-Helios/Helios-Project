@@ -9,10 +9,10 @@ import SwiftUI
 import AVFAudio
 
 struct MiniGame1: View {
-
+    
     
     @State var showSplash = true
-
+    
     @Environment(PlayerModel.self) private var mediaPlayer
     @Environment(MillionaireGameViewModel.self) private var GameViewModel
     
@@ -20,10 +20,10 @@ struct MiniGame1: View {
     @State private var showDetail = false
     @State private var points = 0
     @State private var selectedAnswer: String? = nil
-
+    
     @State private var fillPercentage: CGFloat = 78
-
-
+    
+    
     var body: some View {
         ZStack {
             Color.senape.ignoresSafeArea()
@@ -36,23 +36,23 @@ struct MiniGame1: View {
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .font(.system(size: 70))
- 
+                        
                         
                         Image(systemName: "speaker.wave.3")
                             .font(.system(size: 100))
                             .foregroundStyle(.white)
                     }
-                        .onAppear(){
-                            GameViewModel.startGame()
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                mediaPlayer.playAudio(fileName: "Diode3D", fileExtension: "mp3")
-                            }
-
-                            
+                    .onAppear(){
+                        GameViewModel.startGame()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            mediaPlayer.playAudio(fileName: "Diode3D", fileExtension: "mp3")
                         }
-                        .onTapGesture {
-                            mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
-                        }
+                        
+                        
+                    }
+                    .onTapGesture {
+                        mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
+                    }
                     
                     
                     
@@ -82,12 +82,12 @@ struct MiniGame1: View {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 30)
                                         .frame(width: 350, height: 225)
-                                        .overlay( 
+                                        .overlay(
                                             RoundedRectangle(cornerRadius: 30)
                                                 .fill(selectedAnswer == answer
-                                                        ? (answer == "Diode3D" ? Color.green : Color.red)
-                                                        : Color.white)
-                                       )
+                                                      ? (answer == "Diode3D" ? Color.green : Color.red)
+                                                      : Color.white)
+                                        )
                                     
                                     Image(answer)
                                 }.padding(.bottom, 20)
@@ -95,19 +95,20 @@ struct MiniGame1: View {
                         }
                         
                     }
-
+                    
                     
                 }
-
-            }   .navigationDestination(isPresented: $showDetail) { MiniGame2()}
-                .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading: BackButton( isForegroundWhite: true))
-         
+                
+            }
+            .navigationDestination(isPresented: $showDetail) { MiniGame1_5()}
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: BackButton( isForegroundWhite: true))
+            
         }
     }
-
-               
-            }
+    
+    
+}
         
 
 

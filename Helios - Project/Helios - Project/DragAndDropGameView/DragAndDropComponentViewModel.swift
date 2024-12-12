@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @Observable
 class DragAndDropComponentViewModel {
@@ -19,47 +20,16 @@ class DragAndDropComponentViewModel {
         
     }
     
-    var answersList = ["diode", "resistor", "connector", "blueCapacitor"]
-    var showedAnswers: [String] = []
-    var correctAnswer : String
-    var selectedAnswers : [String] = []
-    var fillPercentage: CGFloat = 1
-    
-    init() {
-        self.answersList = ["diode", "resistor", "connector", "blueCapacitor"]
-        self.showedAnswers = []
-        self.correctAnswer = ""
-    }
-    
-    func startGame() {
-        // Shuffle the list to ensure randomness
-        self.answersList = answersList.shuffled()
-        
-        // Select the correct answer randomly
-        repeat {
-            correctAnswer = answersList.randomElement()!
-        } while selectedAnswers.contains(correctAnswer)
-        selectedAnswers.append(correctAnswer)
-        
-        // Get the first answer from the shuffled list excluding the correct answer
-        var tempAnswers = answersList.filter { answer in
-            answer != correctAnswer
-        }.prefix(1)
-        // Add the correct answer to the temporary list
-        tempAnswers.append(correctAnswer)
-        
-        // Shuffle `tempAnswers` to mix the correct answer with distractors
-        showedAnswers = tempAnswers.shuffled()
-    }
-    
-    func handleDroppedComponents(droppedComponents: [ComponentModel], index: CGPoint? = nil, currentDestination: String) {
+    func handleDroppedComponents(droppedComponents: [ComponentModel], index: CGPoint? = nil, currentDestination: String) -> Bool {
         guard let firstComponent = droppedComponents.first else {
-            return
+            return true
         }
         if firstComponent.componentName == currentDestination {
             print("Correct drop!")
+            return true
         } else {
             print("Wrong drop!")
+            return false
         }
     }
 }

@@ -20,7 +20,6 @@ struct Liv1View: View {
                     .foregroundColor(.black)
                     .font(.system(size: 90))
                 
-                
                 // Immagine del diodo
                 Image("Diode3D") // Assicurati che l'immagine si chiami "diodeImage" e sia nel tuo asset catalog
                     .resizable()
