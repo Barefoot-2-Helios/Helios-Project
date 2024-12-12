@@ -46,14 +46,14 @@ struct MiniGame1: View {
                     }
                     .onAppear(){
                         GameViewModel.startGame()
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        DispatchQueue.main.asyncAfter(deadline: .now()) {
                             mediaPlayer.playAudio(fileName: "Diode3D", fileExtension: "mp3")
                         }
                         
                         
                     }
                     .onTapGesture {
-                        mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
+                        mediaPlayer.playAudio(fileName: "Diode3D", fileExtension: "mp3")
                     }
                     
                     Spacer()

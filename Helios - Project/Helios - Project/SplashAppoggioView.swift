@@ -18,10 +18,12 @@ struct SplashAppoggioView: View {
         NavigationStack{
             ZStack {
                 Topic1View(card: viewModel.cards[selectedCardIndex])
+                    .opacity(showSplash ? 0 : 1)
+
                 Liv1View()
                     .opacity(showSplash ? 1 : 0)
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                             withAnimation() {
                                 self.showSplash = false
                             }

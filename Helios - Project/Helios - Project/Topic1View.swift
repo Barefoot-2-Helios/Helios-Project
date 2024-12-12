@@ -18,107 +18,109 @@ struct Topic1View: View {
     
     var body: some View {
 
-        ZStack {
-            Color.white
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack{
-      
-                ScrollView(.vertical) {
-                    HStack {
-                        ZStack {
-                            Circle()
-                                .foregroundStyle(card.cardBackground).frame(width: 220)
+        NavigationStack {
+            ZStack {
+                Color.white
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack{
+                    
+                    ScrollView(.vertical) {
+                        HStack {
+                            ZStack {
+                                Circle()
+                                    .foregroundStyle(card.cardBackground).frame(width: 220)
                                 
-                            VStack{
-                                Text("Liv 1")
-                                    .fontWeight(.medium)
-                                    .font(.title)
-                                Image("liv1")
-                                    .padding(.top, 15)
+                                VStack{
+                                    Text("Liv 1")
+                                        .fontWeight(.medium)
+                                        .font(.title)
+                                    Image("liv1")
+                                        .padding(.top, 15)
+                                }
                             }
+                            .padding(.leading, 100)
+                            
+                            .onTapGesture {
+                                showDetail = true
+                            }
+                            .navigationDestination(isPresented: $showDetail) {   SplashAppoggioView()}
+                            Spacer()
                         }
-                        .padding(.leading, 100)
-                        
-                        .onTapGesture {
-                            showDetail = true
+                        HStack {
+                            Spacer()
+                            ZStack{
+                                Circle()
+                                    .foregroundStyle(card.cardBackground)      .frame(width: 220)
+                                VStack{
+                                    Text("Liv 2")
+                                        .fontWeight(.medium)
+                                        .font(.title)
+                                    Image("liv2")
+                                        .padding(.top, 15)
+                                }
+                            }.padding(.trailing, 100)
+                            
                         }
-                        .navigationDestination(isPresented: $showDetail) {   SplashAppoggioView()}
-                        Spacer()
-                    }
-                    HStack {
-                        Spacer()
-                        ZStack{
-                            Circle()
-                                .foregroundStyle(card.cardBackground)      .frame(width: 220)
-                            VStack{
-                                Text("Liv 2")
-                                    .fontWeight(.medium)
-                                    .font(.title)
-                                Image("liv2")
-                                    .padding(.top, 15)
-                            }
-                        }.padding(.trailing, 100)
-
-                    }
-                    HStack {
-                        ZStack{
-                            Circle()
-                                .foregroundStyle(card.cardBackground).frame(width: 220)
-                            VStack{
-                                Text("Liv 3")
-                                    .fontWeight(.medium)
-                                    .font(.title)
-                                Image("liv3")
-                                    .padding(.top, 15)
-
-                            }
+                        HStack {
+                            ZStack{
+                                Circle()
+                                    .foregroundStyle(card.cardBackground).frame(width: 220)
+                                VStack{
+                                    Text("Liv 3")
+                                        .fontWeight(.medium)
+                                        .font(.title)
+                                    Image("liv3")
+                                        .padding(.top, 15)
+                                    
+                                }
                                 
-                        }.padding(.leading, 100)
-                        Spacer()
-                    }
-                    HStack {
-                        Spacer()
-                        ZStack {
-                            Circle()
-                                .foregroundStyle(card.cardBackground)
-                                .frame(width: 220)
-                            VStack{
-                                Text("Liv 4")
-                                    .fontWeight(.medium)
-                                    .font(.title)
-                                Image("liv4")
-                                    .padding(.top, 15)
-
-                            }
+                            }.padding(.leading, 100)
+                            Spacer()
+                        }
+                        HStack {
+                            Spacer()
+                            ZStack {
+                                Circle()
+                                    .foregroundStyle(card.cardBackground)
+                                    .frame(width: 220)
+                                VStack{
+                                    Text("Liv 4")
+                                        .fontWeight(.medium)
+                                        .font(.title)
+                                    Image("liv4")
+                                        .padding(.top, 15)
+                                    
+                                }
                                 
-                        }.padding(.trailing, 100)
+                            }.padding(.trailing, 100)
+                        }
+                        HStack {
+                            ZStack {
+                                Circle()
+                                    .foregroundStyle(card.cardBackground).frame(width: 220)
+                                VStack{
+                                    Text("Liv 5")
+                                        .fontWeight(.medium)
+                                        .font(.title)
+                                    Image("liv5")
+                                        .padding(.top, 15)
+                                    
+                                }
+                            }.padding(.leading, 100)
+                            
+                            Spacer()
+                        }
                     }
-                    HStack {
-                        ZStack {
-                            Circle()
-                                .foregroundStyle(card.cardBackground).frame(width: 220)
-                            VStack{
-                                Text("Liv 5")
-                                    .fontWeight(.medium)
-                                    .font(.title)
-                                Image("liv5")
-                                    .padding(.top, 15)
-
-                            }
-                        }.padding(.leading, 100)
-
-                        Spacer()
-                    }
-            }
                     
                 }
-
+                
             }
-        .navigationBarBackButtonHidden(true)
-    .navigationBarItems(leading: BackButton( isForegroundWhite: true))
-        .onAppear { isShowing = true }
-               .onDisappear { isShowing = false }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: BackButton( isForegroundWhite: true))
+            .onAppear { isShowing = true }
+            .onDisappear { isShowing = false }
+        }
         }
 
 }
