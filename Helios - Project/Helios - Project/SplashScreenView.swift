@@ -15,21 +15,7 @@ struct SplashScreenView: View {
             Image("background1")
                 .resizable()
                 .scaledToFill()
-            VStack {
-                Spacer()
-                Text("Welcome to")
-                    .fontWeight(.bold)
-                    .font(.system(size: 80))
-                    .foregroundStyle(.giallino)
-                Spacer()
-                Text("\nBRIGHT!")
-                    .fontWeight(.bold)
-                    .font(.system(size: 90))
-                    .foregroundStyle(.giallino)
-                
-                Spacer()
-                    
-            }
+          
            
         }
     }

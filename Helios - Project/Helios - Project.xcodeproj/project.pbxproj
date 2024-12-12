@@ -99,13 +99,13 @@
 				52CE94D72CA58AF700E15792 /* Helios___ProjectApp.swift */,
 				5284C51C2D06066500E91C06 /* BackButton.swift */,
 				5284C5212D060FAB00E91C06 /* LinearProgress.swift */,
+				666381952D0AED1200C12E50 /* SplashScreenView.swift */,
 				52CE94D92CA58AF700E15792 /* ContentView.swift */,
 				6603E6132D085E6C004885C2 /* CardCarouselView.swift */,
 				6603E6152D086475004885C2 /* CardView.swift */,
 				6618A6EE2D0AF94600DD8497 /* SplashAppoggioView.swift */,
 				6663818F2D0AECFC00C12E50 /* Liv1View.swift */,
 				666381902D0AECFC00C12E50 /* Liv2View.swift */,
-				666381952D0AED1200C12E50 /* SplashScreenView.swift */,
 				666381972D0AED1F00C12E50 /* TopicView.swift */,
 				6603E5D82D04AB97004885C2 /* Topic1View.swift */,
 				6603E5E32D04B7EF004885C2 /* MiniGame1.swift */,
@@ -367,7 +367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Helios - Project/Preview Content\"";
-				DEVELOPMENT_TEAM = B9N492SM99;
+				DEVELOPMENT_TEAM = 56RG6J6GAY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Furaha;
@@ -397,7 +397,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Helios - Project/Preview Content\"";
-				DEVELOPMENT_TEAM = B9N492SM99;
+				DEVELOPMENT_TEAM = 56RG6J6GAY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Furaha;
