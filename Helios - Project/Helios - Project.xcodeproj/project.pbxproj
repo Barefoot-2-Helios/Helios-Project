@@ -19,7 +19,6 @@
 		52CE94DC2CA58AF800E15792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CE94DB2CA58AF800E15792 /* Assets.xcassets */; };
 		52CE94DF2CA58AF800E15792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CE94DE2CA58AF800E15792 /* Preview Assets.xcassets */; };
 		5888AA742D09F10000F7A67E /* DragGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888AA732D09F10000F7A67E /* DragGameView.swift */; };
-		58DB46B22D08814700D08428 /* DragAndDropGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB46B12D08814700D08428 /* DragAndDropGameView.swift */; };
 		58DB46B52D08848800D08428 /* ComponentDestinatioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB46B42D08848800D08428 /* ComponentDestinatioView.swift */; };
 		58DB46B72D08862300D08428 /* StartingComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB46B62D08862300D08428 /* StartingComponentView.swift */; };
 		58DB46B92D088BE700D08428 /* DragAndDropComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB46B82D088BDC00D08428 /* DragAndDropComponentModel.swift */; };
@@ -46,7 +45,6 @@
 		52CE94DB2CA58AF800E15792 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52CE94DE2CA58AF800E15792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5888AA732D09F10000F7A67E /* DragGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGameView.swift; sourceTree = "<group>"; };
-		58DB46B12D08814700D08428 /* DragAndDropGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropGameView.swift; sourceTree = "<group>"; };
 		58DB46B42D08848800D08428 /* ComponentDestinatioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDestinatioView.swift; sourceTree = "<group>"; };
 		58DB46B62D08862300D08428 /* StartingComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingComponentView.swift; sourceTree = "<group>"; };
 		58DB46B82D088BDC00D08428 /* DragAndDropComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropComponentModel.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 			children = (
 				58DB46B82D088BDC00D08428 /* DragAndDropComponentModel.swift */,
 				58DB46BA2D088C9900D08428 /* DragAndDropComponentViewModel.swift */,
-				58DB46B12D08814700D08428 /* DragAndDropGameView.swift */,
 				58DB46B62D08862300D08428 /* StartingComponentView.swift */,
 				58DB46B42D08848800D08428 /* ComponentDestinatioView.swift */,
 				58DB46BD2D08A04700D08428 /* UTType+Extension.swift */,
@@ -229,7 +226,6 @@
 				58DB46BE2D08A05100D08428 /* UTType+Extension.swift in Sources */,
 				6603E5D72D04A725004885C2 /* TopicView.swift in Sources */,
 				58DB46B72D08862300D08428 /* StartingComponentView.swift in Sources */,
-				58DB46B22D08814700D08428 /* DragAndDropGameView.swift in Sources */,
 				58DB46B52D08848800D08428 /* ComponentDestinatioView.swift in Sources */,
 				5284C5822D073F1C00E91C06 /* SplashScreenView.swift in Sources */,
 				5888AA742D09F10000F7A67E /* DragGameView.swift in Sources */,
