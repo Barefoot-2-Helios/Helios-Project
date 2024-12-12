@@ -12,6 +12,7 @@ struct CardCarouselView: View {
     @State private var selectedCardIndex = 0
     @State private var isPresentingFullScreenCover = false
     
+    
     var body: some View {
         NavigationStack{
             VStack {
@@ -48,7 +49,8 @@ struct CardCarouselView: View {
                 .offset(y: -90)
                 //            .padding(.top, 20)
             }
-            .navigationDestination(isPresented: $isPresentingFullScreenCover) { SplashAppoggioView()}
+            .navigationDestination(isPresented: $isPresentingFullScreenCover) {   Topic1View(card: viewModel.cards[selectedCardIndex])}
+               
         }
     }
 }

@@ -43,9 +43,7 @@ struct Topic1View: View {
                         .onTapGesture {
                             showDetail = true
                         }
-                        .fullScreenCover(isPresented: $showDetail) {
-                            MiniGame1()
-                        }
+                        .navigationDestination(isPresented: $showDetail) {   SplashAppoggioView()}
                         Spacer()
                     }
                     HStack {
