@@ -16,6 +16,7 @@
 		52CE94DA2CA58AF700E15792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE94D92CA58AF700E15792 /* ContentView.swift */; };
 		52CE94DC2CA58AF800E15792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CE94DB2CA58AF800E15792 /* Assets.xcassets */; };
 		52CE94DF2CA58AF800E15792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CE94DE2CA58AF800E15792 /* Preview Assets.xcassets */; };
+		5888AA742D09F10000F7A67E /* DragGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888AA732D09F10000F7A67E /* DragGameView.swift */; };
 		58DB46B22D08814700D08428 /* DragAndDropGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB46B12D08814700D08428 /* DragAndDropGameView.swift */; };
 		58DB46B52D08848800D08428 /* ComponentDestinatioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB46B42D08848800D08428 /* ComponentDestinatioView.swift */; };
 		58DB46B72D08862300D08428 /* StartingComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DB46B62D08862300D08428 /* StartingComponentView.swift */; };
@@ -40,6 +41,7 @@
 		52CE94D92CA58AF700E15792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		52CE94DB2CA58AF800E15792 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52CE94DE2CA58AF800E15792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5888AA732D09F10000F7A67E /* DragGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGameView.swift; sourceTree = "<group>"; };
 		58DB46B12D08814700D08428 /* DragAndDropGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropGameView.swift; sourceTree = "<group>"; };
 		58DB46B42D08848800D08428 /* ComponentDestinatioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDestinatioView.swift; sourceTree = "<group>"; };
 		58DB46B62D08862300D08428 /* StartingComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingComponentView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				58DB46B62D08862300D08428 /* StartingComponentView.swift */,
 				58DB46B42D08848800D08428 /* ComponentDestinatioView.swift */,
 				58DB46BD2D08A04700D08428 /* UTType+Extension.swift */,
+				5888AA732D09F10000F7A67E /* DragGameView.swift */,
 			);
 			path = DragAndDropGameView;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				58DB46B22D08814700D08428 /* DragAndDropGameView.swift in Sources */,
 				58DB46B52D08848800D08428 /* ComponentDestinatioView.swift in Sources */,
 				5284C5822D073F1C00E91C06 /* SplashScreenView.swift in Sources */,
+				5888AA742D09F10000F7A67E /* DragGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,9 +375,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.letiziagranata.Helios---Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -402,9 +410,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.letiziagranata.Helios---Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

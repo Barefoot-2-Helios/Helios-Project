@@ -12,8 +12,9 @@ struct StartingComponentView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 15)
-                .foregroundStyle(.rossino)
+            RoundedRectangle(cornerRadius: 25)
+                .frame(width: 370, height: 350)
+                .foregroundStyle(.white)
             Image(startingComponent.componentImage)
                 .draggable(startingComponent)
         }

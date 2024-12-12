@@ -16,9 +16,12 @@ struct ComponentDestinatioView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 15)
-                .foregroundStyle(.giallino)
+            RoundedRectangle(cornerRadius: 25)
+                .frame(width: 300, height: 300)
+                .foregroundStyle(.white)
             Image(componentDestination.componentDestinationImage)
+                .resizable()
+                .frame(width: 235, height: 60)
         }
         .dropDestination(for: ComponentModel.self) { droppedComponent, index in
             viewModel.handleDroppedComponents(droppedComponents: droppedComponent, index: index, currentDestination: componentDestination.componentName)

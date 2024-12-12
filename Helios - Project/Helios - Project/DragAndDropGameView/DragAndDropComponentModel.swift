@@ -16,7 +16,7 @@ struct ComponentModel: Codable {
 
 extension ComponentModel: Transferable {
     static var transferRepresentation: some TransferRepresentation {
-        CodableRepresentation(contentType: .component)
+        CodableRepresentation(contentType: .text)
         ProxyRepresentation(exporting: \.componentName)
         
     }
