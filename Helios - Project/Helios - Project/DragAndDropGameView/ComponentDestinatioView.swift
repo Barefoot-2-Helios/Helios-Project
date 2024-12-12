@@ -13,6 +13,7 @@ struct ComponentDestinatioView: View {
     
     @Binding var componentDestination: ComponentModel
     @State var startingComponent: ComponentModel?
+    @State private var buttonColor: Color = .white
     
     @Binding var correctAnswer: Bool
     
@@ -20,13 +21,18 @@ struct ComponentDestinatioView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
                 .frame(width: 300, height: 300)
-                .foregroundStyle(.white)
+                .foregroundStyle(buttonColor)
             Image(componentDestination.componentDestinationImage)
                 .resizable()
                 .frame(width: 235, height: 60)
         }
         .dropDestination(for: ComponentModel.self) { droppedComponent, index in
             correctAnswer = viewModel.handleDroppedComponents(droppedComponents: droppedComponent, index: index, currentDestination: componentDestination.componentName)
+            if correctAnswer == true {
+                buttonColor = .green
+            } else {
+                buttonColor = .red
+            }
             return true
         }
     }
