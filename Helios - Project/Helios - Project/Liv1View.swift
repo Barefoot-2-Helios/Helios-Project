@@ -9,66 +9,51 @@ import SwiftUI
 import AVFoundation
 
 struct Liv1View: View {
-    
-    @Environment(PlayerModel.self) private var mediaPlayer
-    @State private var audioPlayer: AVAudioPlayer?
-    @State private var timer: Timer?
     @State private var showDetail = false
-    @Environment(\.dismiss) var dismiss // Access to dismiss the view
     
     var body: some View {
-        ZStack {
-            Color.senape.ignoresSafeArea()
-            VStack{
-               
-                Spacer()
-                Text("Liv 1")
-                    .fontWeight(.semibold)
+            VStack() {
+                // Titolo del livello
+                Text("LEVEL 1")
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
                     .font(.system(size: 90))
-                    .foregroundStyle(.white)
                 
-                Image("resistor")
-                Text("Resistor")
-                    .fontWeight(.semibold)
-                    .font(.system(size: 90))
-                    .foregroundStyle(.white)
-                Spacer()
+                
+                // Immagine del diodo
+                Image("Diode3D") // Assicurati che l'immagine si chiami "diodeImage" e sia nel tuo asset catalog
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width:4500, height: 400)
+                    .padding(90)// Dimensioni dell'immagine
+                
+                
+                // Etichetta "DIODE"
+                Text("DIODE")
+                    .fontWeight(.bold)
+                    .foregroundColor(.senape)
+                    .font(.system(size: 70))
+                
             }
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading: BackButton( isForegroundWhite: true))// Attach custom button
+                .navigationDestination(isPresented: $showDetail) { MiniGame1()}
+                .onAppear(){
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.showDetail.toggle()
+                    }
+                    /* .fullScreenCover(isPresented: $showDetail) {
+                     MiniGame1()
+                     }*/
+                }
+            
         }
-        .onAppear {
-            startAudioPlayback()
-        }
-        .onDisappear {
-            stopAudioPlayback()
-        }
-        .onTapGesture {
-            stopAudioPlayback()
-        }
-       
-    }
-    private func startAudioPlayback() {
-        mediaPlayer.playAudio(fileName: "Resistor", fileExtension: "mp3")
-
         
-        // Start a timer to play the audio every 5 seconds
-        Timer.scheduledTimer(withTimeInterval: 300.0, repeats: true) { _ in
-            DispatchQueue.main.async {
-                mediaPlayer.audioPlayer?.play()
-            }
-        }
-    }
     
-    private func stopAudioPlayback() {
-         timer?.invalidate() // Invalida il timer
-         timer = nil // Rimuovi la reference al timer
-         mediaPlayer.audioPlayer?.stop() // Ferma l'audio
-         mediaPlayer.audioPlayer = nil // Libera il player per evitare conflitti
-     }
+    
 }
-
-
 #Preview {
     Liv1View()
-        .environment(PlayerModel())
+  
 
 }

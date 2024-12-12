@@ -17,21 +17,12 @@ struct BackButton: View {
             Button(action: {
                 dismiss()
             }) {
-                Spacer()
                 HStack {
-                    Image(systemName: "arrowtriangle.backward")
-                        .font(.system(size: 70))
-                        .foregroundColor(isForegroundWhite ? .white : Color("giallino"))
-                    ZStack {
-                        Circle()
-                            .frame(width: 100)
-                            .foregroundStyle(isForegroundWhite ? .white : Color("giallino"))
-                        Image("house")
-                            .resizable()
-                            .frame(width: 75, height: 55)
-                    }
+                    Image("backButton2")
+                        .foregroundColor(isForegroundWhite ? .white : .black)
+                    
                 }
-                .padding(.trailing, 40)
+ 
             }
         }
     }

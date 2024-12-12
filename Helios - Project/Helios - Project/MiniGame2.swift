@@ -1,4 +1,4 @@
-//
+
 //  MiniGame1.swift
 //  Helios - Project
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFAudio
 
-struct MiniGame1: View {
+struct MiniGame2: View {
     
     @State var showSplash = true
     
@@ -21,26 +21,27 @@ struct MiniGame1: View {
     @State private var points = 0
     @State private var selectedAnswer: String? = nil
     @State private var fillPercentage: CGFloat = 78
+    
+    @State private var answerList = ["DIODE", "CONNECTOR", "RESISTOR", "CAPACITOR" ]
 
     
     var body: some View {
         ZStack {
             Color.senape.ignoresSafeArea()
             VStack{
-                
+
                 
                 VStack{
-                    Group{
-                        Text("DIODE")
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .font(.system(size: 70))
- 
-                        
-                        Image(systemName: "speaker.wave.3")
-                            .font(.system(size: 100))
-                            .foregroundStyle(.white)
-                    }
+                    
+                    Image("DiodeReal")
+                        .font(.system(size: 100))
+                        .offset(x:10, y:-70)
+
+
+                    
+                    Image(systemName: "speaker.wave.3")
+                        .foregroundStyle(.white)
+                        .font(.system(size: 100))
                         .onAppear(){
                             GameViewModel.startGame()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -51,14 +52,16 @@ struct MiniGame1: View {
                         .onTapGesture {
                             mediaPlayer.playAudio(fileName: GameViewModel.correctAnswer , fileExtension: "mp3")
                         }
+        
                     
                     
                     
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 30) {
-                        ForEach(GameViewModel.showedAnswers, id: \.self) { answer in
+                    
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 50) {
+                        ForEach(answerList, id: \.self) { answer in
                             Button(action: {
                                 selectedAnswer = answer
-                                if selectedAnswer == "Diode3D" {
+                                if selectedAnswer == "DIODE"  {
                                     fillPercentage = fillPercentage + 25
                                     if(fillPercentage >= 100){
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -77,37 +80,45 @@ struct MiniGame1: View {
                                     }
                                 }
                             }) {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 30)
-                                        .frame(width: 350, height: 225)
-                                        .overlay( 
-                                            RoundedRectangle(cornerRadius: 30)
-                                                .fill(selectedAnswer == answer
-                                                        ? (answer == "Diode3D" ? Color.green : Color.red)
-                                                        : Color.white)
-                                       )
-                                    
-                                    Image(answer)
-                                }.padding(.bottom, 20)
+                                //TO CHANGE WITH RIGHT ASSET FOR
+                                ZStack{
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .frame(width: 350, height: 225)
+                                            .overlay( // Bordo opzionale per aggiungere un effetto più evidente
+                                                RoundedRectangle(cornerRadius: 30)
+                                                    .fill(selectedAnswer == answer
+                                                          ? (answer == "DIODE" ? Color.green : Color.red)
+                                                          : Color.white) // Solo il selezionato cambia colore
+                                            )
+                                    }
+                                     Text(answer)
+                                        .font(.system(size: 40))
+                                        .foregroundStyle(.black)
+                                }
                             }
                         }
                         
-                    }
-
+                    }  .navigationBarBackButtonHidden(true)
+                        .navigationBarItems(leading: BackButton( isForegroundWhite: true))
+                        .navigationDestination(isPresented: $showDetail) { Liv2View()}
+                  
+                    
                     
                 }
-            }   .navigationDestination(isPresented: $showDetail) { MiniGame2()}
-                .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading: BackButton( isForegroundWhite: true))
-         
+            }
+            
         }
-    }
+        
+   }
+  
 }
 
 
 
 #Preview {
-    MiniGame1()
+    MiniGame2()
         .environment(PlayerModel())
         .environment(MillionaireGameViewModel())
 }
+

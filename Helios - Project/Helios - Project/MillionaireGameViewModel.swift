@@ -13,15 +13,15 @@ import SwiftUI
 
 @Observable
 class MillionaireGameViewModel {
-    var answersList = ["Capacitor", "Diode", "Connector", "Resistor", "DrumCoil"]
-    var showedAnswers: [String] = []
+    var answersList = ["Capacitor3D", "Diode3D", "Connector3D", "Resistor3D"]
+     var showedAnswers: [String] = []
     var correctAnswer : String
     var selectedAnswers : [String] = []
     var fillPercentage: CGFloat = 1
 
 
     init() {
-        self.answersList = ["Capacitor", "Diode", "Connector", "Resistor", "DrumCoil"]
+        self.answersList = ["Capacitor3D", "Diode3D", "Connector3D", "Resistor3D"]
         self.showedAnswers = []
         self.correctAnswer = ""
     }

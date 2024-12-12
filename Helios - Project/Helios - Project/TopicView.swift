@@ -17,24 +17,21 @@ struct TopicView: View {
         ZStack{
             VStack{
                 Spacer()
-                BackButton( isForegroundWhite: false)
                 
                 ScrollView(.vertical) {
-                    
                     HStack {
                         ZStack {
                             Circle()
                                 .foregroundStyle(.senape)
                                 .frame(width: 220)
-                            Text("Topic 1")
+                                Text("Topic 1")
+                            
                         }                                .padding(.leading, 100)
                         
                             .onTapGesture {
                                 showDetail = true
                             }
-                            .fullScreenCover(isPresented: $showDetail) {
-                                Topic1View()
-                            }
+                            .navigationDestination(isPresented: $showDetail) { Topic1View()}
                         Spacer()
                     }
                     HStack {
