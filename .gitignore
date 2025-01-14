@@ -62,3 +62,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 Helios - Project/Helios - Project/.DS_Store
 Helios - Project/Helios - Project/Assets.xcassets/.DS_Store
+Helios - Project/Helios - Project/DragAndDropGameView/.DS_Store
